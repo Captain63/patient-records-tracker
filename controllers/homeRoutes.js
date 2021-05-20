@@ -21,6 +21,7 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
+// Render the login page.  If the user is logged in, redirect to the home page.
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
     res.redirect('/');
@@ -28,6 +29,16 @@ router.get('/login', (req, res) => {
   }
 
   res.render('login');
+});
+
+// Render the sign up page.  If the user is logged in, redirect to the home page.
+router.get('/signup', (req, res) => {
+    if (req.session.logged_in) {
+      res.redirect('/');
+      return;
+    }
+  
+    res.render('signup');
 });
 
 module.exports = router;

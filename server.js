@@ -34,7 +34,7 @@ const sess = {
     store: new SequelizeStore({
       db: sequelize
     })
-  };
+};
 
 // Initialize the server
 const app = express();
