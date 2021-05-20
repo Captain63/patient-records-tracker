@@ -30,7 +30,7 @@ router.get('/', (req, res) => {
 
 // GET /api/users/1 -- get a single user by id
 router.get('/:id', (req, res) => {
-    // Acess the User model and run the findOne() method to get a single user based on parameters
+    // Access the User model and run the findOne() method to get a single user based on parameters
     User.findOne({
       // when the data is sent back, exclude the password property
       attributes: { exclude: ['password'] },
@@ -156,7 +156,7 @@ router.put('/:id', withAuth, (req, res) => {
         console.log(err);
         res.status(500).json(err);
       });
-  })
+})
 
 // DELETE /api/users/1 -- delete an existing user
 router.delete('/:id', withAuth, (req, res) => {
@@ -177,6 +177,6 @@ router.delete('/:id', withAuth, (req, res) => {
         console.log(err);
         res.status(500).json(err);
       });
-  });
+});
 
 module.exports = router;
