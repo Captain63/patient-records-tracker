@@ -1,6 +1,4 @@
 package-lock.json
-.env.EXAMPLE
-node_modules/
 
 # Logs
 logs
