@@ -46,9 +46,13 @@ Run npm install to install all dependencies. Then run ```mysql -u root < db/sche
 
 ## Contributing
 Rachel Handschuh ```GitHub: [@rhandschuh](https://api.github.com/users/rhandschuh)```
+
 James Corcoran ```GitHub: [@jcorcorangithub](https://api.github.com/users/jcorcorangithub)```
+
 Stephen Roddewig ```GitHub: [@Captain63](https://api.github.com/users/Captain63)```
+
 Brandon Ford ```GitHub: [@brandonfordd](https://api.github.com/users/brandonfordd)```
+
 
 ## Tests
 There are no test!
