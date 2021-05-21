@@ -9,27 +9,28 @@
 </head>
 
 <body>
-  <div class="wrapper">
-    <header>
-      <h1>
-        <a href="/">MVC Patient Records</a>
-      </h1>
-        <nav>
-          <span><a href="/">home</a></span> 
-          {{#if logged_in}}
-          <button id="logout" class="btn-no-style">logout</button>
-          {{else}}
-          <a href="/login">login</a>
-          {{/if}}
-        </nav>
-    </header>
-    <main>
-      {{{ body }}}
-    </main>
-    <footer>
-      Thanks for visiting!
-    </footer>
-  </div>
+  {{#if logged_in}}
+  <header>
+    <h1>
+      <a href="/">MVC Patient Records</a>
+    </h1>
+      <nav>
+        <span><a href="/">home</a></span> 
+        {{#if logged_in}}
+        <button id="logout" class="btn-no-style">logout</button>
+        {{else}}
+        <a href="/login">login</a>
+        {{/if}}
+      </nav>
+  </header>
+  {{/if}}
+  <main>
+    {{{ body }}}
+  </main>
+
+  <footer>
+    Thanks for visiting!
+  </footer>
 
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
