@@ -28,6 +28,14 @@ Patient.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    doctor_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "user",
+        key: "id"
+      }
+    }
     // phone number, diagnostic impressions, etc...
   },
   {
