@@ -5,9 +5,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-// the Post model extends the sequelize model 
+// the Record model extends the sequelize model 
 class Record extends Model {}
-// define the table columns and configuration, similar to the setup for the User model
+// define the table columns and configuration, similar to the setup for the Record model
 Record.init(
     {
         record_id: {

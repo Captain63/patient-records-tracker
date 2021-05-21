@@ -4,7 +4,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-// create the User model
+// create the Patient model
 class Patient extends Model {}
 
 // define the table columns and configuration
@@ -34,4 +34,5 @@ Patient.init(
   }
 );
 
+// Export the model
 module.exports = Patient;
