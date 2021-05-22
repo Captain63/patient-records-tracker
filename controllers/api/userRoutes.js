@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
 
   try {
     // Access the User model and run .findAll() method to get all users
-    const dbUserDate = await User.findAll({
+    const dbUserData = await User.findAll({
       // when the data is sent back, exclude the password property
       attributes: { exclude: ['password'] }
     })
@@ -64,7 +64,7 @@ router.post('/', (req, res) => {
   // create method
   // expects an object in the form {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
   try {
-    const dbUserDate = await User.create({
+    const dbUserData = await User.create({
       username: req.body.username,
       email: req.body.email,
       password: req.body.password
@@ -91,7 +91,7 @@ router.post('/login',  (req, res) => {
   try {
     // findOne method by email to look for an existing user in the database with the email address entered
     // expects {email: 'lernantino@gmail.com', password: 'password1234'}
-    const dbUserDate = await User.findOne({
+    const dbUserData = await User.findOne({
       where: {
         email: req.body.email
       }
