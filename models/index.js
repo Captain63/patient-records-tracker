@@ -2,7 +2,7 @@
 
 // Import models
 const User = require('./User');
-const Note = require("./Note");
+const Record = require("./Record");
 const Patient = require("./Patient");
 
 // Relationships
@@ -36,17 +36,7 @@ Note.belongsTo(User, {
     foreignKey: "user_id"
 })
 
-// Patient model
-const Patient = require('./Patient');
-
-// Patient model
-const Record = require('./Record');
-
 // Create associations between the models
 
 // Export the modules
-<<<<<<< HEAD
 module.exports = { User, Patient, Record };
-=======
-module.exports = { User, Note, Patient };
->>>>>>> 6e18ff75bac329ab55845e1c431636116aa539b5

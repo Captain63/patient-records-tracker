@@ -54,9 +54,5 @@ Patient.init(
   }
 );
 
-<<<<<<< HEAD
 // Export the model
 module.exports = Patient;
-=======
-module.exports = Patient;
->>>>>>> 6e18ff75bac329ab55845e1c431636116aa539b5

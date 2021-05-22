@@ -20,13 +20,29 @@ Record.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        record_text: {
+        text: {
             type: DataTypes.TEXT,
             allowNull: false,
             validate: {
                 // Record must be at least one character long
                 len: [1]
             }
+        },
+        patient_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: "patient",
+                key: "id"
+            } 
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: "user",
+                key: "id"
+            } 
         }
     },
     {
