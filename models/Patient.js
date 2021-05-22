@@ -23,6 +23,26 @@ Patient.init(
     birth_date: {
       type: DataTypes.DATEONLY,
       allowNull: false
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+      validate: {
+        isEmail: true,
+      },
+    },
+    address: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    doctor_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "user",
+        key: "id"
+      }
     }
   },
   {
@@ -34,5 +54,9 @@ Patient.init(
   }
 );
 
+<<<<<<< HEAD
 // Export the model
 module.exports = Patient;
+=======
+module.exports = Patient;
+>>>>>>> 6e18ff75bac329ab55845e1c431636116aa539b5

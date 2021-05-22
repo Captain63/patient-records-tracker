@@ -51,8 +51,8 @@ User.init(
       },
     // set up a beforeUpdate lifecycle hook to hash the password before a user object is updated in the database
     async beforeUpdate(updatedUserData) {
-      updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
-      return updatedUserData;
+        updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+        return updatedUserData;
       }
     },
     sequelize,
