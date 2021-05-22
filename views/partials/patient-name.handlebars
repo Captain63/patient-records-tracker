@@ -1,0 +1,9 @@
+{{#each patients as |patient| }}
+    <a href="/" class="list-group-item list-group-item-action active py-3 lh-tight text-nowrap" aria-current="true">
+        <div class="colum align-center mb-5">
+            <div class="col-md-6">
+              <h2> {{patient.name}}</h2>
+            </div>
+        </div> 
+    </a>
+{{/each}}

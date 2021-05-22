@@ -5,15 +5,7 @@
             <svg class="bi me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
             <span class="fs-5 fw-semibold">List group</span>
             </a>
-            {{#each patients as |patient| }}
-            <a href="/" class="list-group-item list-group-item-action active py-3 lh-tight text-nowrap" aria-current="true">
-                <div class="colum align-center mb-5">
-                    <div class="col-md-6">
-                      <h2> {{patient.name}}</h2>
-                    </div>
-                </div> 
-            </a>
-            {{/each}}
+            {{>patient-name}}
         </div>
 
         <div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-white col-4" style="width: 100%;">
