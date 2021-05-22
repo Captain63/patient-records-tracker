@@ -32,7 +32,7 @@ router.get('/:id', (req, res) => {
     Patient.findOne({
       where: {
         // use id as the parameter for the request
-        patient_id: req.params.id
+        id: req.params.id
       },
     })
       .then(dbPatientData => {
@@ -86,7 +86,7 @@ router.put('/:id', (req, res) => {
         individualHooks: true,
         // use the id as the parameter for the individual user to be updated
         where: {
-            patient_id: req.params.patient_id
+            id: req.params.id
         }
     })
       .then(dbPatientData => {

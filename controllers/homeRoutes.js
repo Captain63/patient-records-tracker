@@ -1,7 +1,7 @@
 // Dependencies
 const sequelize = require('../config/connection');
 const router = require('express').Router();
-const { User } = require('../models');
+const { User, Patient } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
@@ -13,8 +13,15 @@ router.get('/', withAuth, async (req, res) => {
 
     const users = userData.map((project) => project.get({ plain: true }));
 
+    const patientData = await Patient.findAll({
+      order: [['name', 'ASC']],
+    });
+
+    const patients = patientData.map((project) => project.get({ plain: true }));
+
     res.render('homepage', {
       users,
+      patients,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
