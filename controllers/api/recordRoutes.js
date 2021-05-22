@@ -12,11 +12,10 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 // Routes
 
-// GET /api/users -- get all users
+// GET /api/users -- get all records
 router.get('/', (req, res) => {
     Record.findAll({
         // Query configuration
-        // From the Post table, include the post ID, URL, title, and the timestamp from post creation
         attributes: [
             'id',
             'title',
@@ -43,7 +42,7 @@ router.get('/', (req, res) => {
     });
 });
 
-// GET /api/patients/1 -- get a single user by id
+// GET /api/patients/1 -- get a single record by id
 router.get('/:id', (req, res) => {
     // Access the User model and run the findOne() method to get a single user based on parameters
     Record.findOne({
@@ -80,7 +79,7 @@ router.get('/:id', (req, res) => {
       });
   });
 
-// POST api/posts -- create a new post
+// POST api/posts -- create a record post
 router.post('/', withAuth, (req, res) => {
     // expects object of the form {title: 'Sample Title Here', post_text: 'Here's some sample text for a post.', user_id: 1}
     Record.create({
@@ -95,53 +94,5 @@ router.post('/', withAuth, (req, res) => {
     });
 });
 
-// PUT /api/patients/1 -- update an existing user
-router.put('/:id', (req, res) => {
-    // update method
-
-    // if req.body has exact key/value pairs to match the model, 
-    // you can just use `req.body` instead of calling out each property,
-    // allowing for updating only key/value pairs that are passed through
-    Record.update(req.body, {
-        // since there is a hook to hash only the password, the option is noted here
-        individualHooks: true,
-        // use the id as the parameter for the individual user to be updated
-        where: {
-            id: req.params.id
-        }
-    })
-      .then(dbRecordData => {
-        if (!dbRecordData[0]) {
-          res.status(404).json({ message: 'No Record found with this id' });
-          return;
-        }
-        res.json(dbRecordData);
-      })
-      .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-      });
-})
-
-// DELETE /api/users/1 -- delete an existing user
-router.delete('/:id', withAuth, (req, res) => {
-    // destroy method
-    Record.destroy({
-      where: {
-        id: req.params.id
-      }
-    })
-      .then(dbRecordData => {
-        if (!dbRecordData) {
-          res.status(404).json({ message: 'No Record found with this id' });
-          return;
-        }
-        res.json(dbRecordData);
-      })
-      .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-      });
-});
 
 module.exports = router;
