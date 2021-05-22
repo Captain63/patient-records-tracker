@@ -10,7 +10,7 @@ class Record extends Model {}
 // define the table columns and configuration, similar to the setup for the Record model
 Record.init(
     {
-        record_id: {
+        id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
@@ -26,20 +26,6 @@ Record.init(
             validate: {
                 // Record must be at least one character long
                 len: [1]
-            }
-        },
-        patient_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'patient',
-                key: 'patient_id'
-            }
-        },
-        user_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'user',
-                key: 'user_id'
             }
         }
     },

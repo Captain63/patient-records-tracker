@@ -10,7 +10,7 @@ class Patient extends Model {}
 // define the table columns and configuration
 Patient.init(
   {
-    patient_id: {
+    id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
