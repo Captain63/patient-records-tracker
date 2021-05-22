@@ -1,12 +1,14 @@
-// Note Model
+// Record model
 
 // Dependencies
+// sequelize model, datatypes, and database connection
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Note extends Model {}
-
-Note.init(
+// the Record model extends the sequelize model 
+class Record extends Model {}
+// define the table columns and configuration, similar to the setup for the Record model
+Record.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -20,7 +22,11 @@ Note.init(
         },
         text: {
             type: DataTypes.TEXT,
-            allowNull: false
+            allowNull: false,
+            validate: {
+                // Record must be at least one character long
+                len: [1]
+            }
         },
         patient_id: {
             type: DataTypes.INTEGER,
@@ -41,12 +47,12 @@ Note.init(
     },
     {
         sequelize,
-        // Reference createdAt property for pulling note date in view
-        timestamps: true,
         freezeTableName: true,
+        timestamps: true,
         underscored: true,
-        modelName: 'note',
+        modelName: 'record'
     }
-);
+)
 
-module.exports = Note;
+// Export the model
+module.exports = Record;

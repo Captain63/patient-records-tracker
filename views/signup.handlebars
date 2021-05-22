@@ -1,23 +1,23 @@
-<h2>Sign-up!</h2>
+<form class="form signup-form wrapper fadeInDown">
+  <div id="formContent">
+  <!-- Tabs Titles -->
+  <!-- Icon -->
+  <div class="fadeIn first">
+    <h2>Sign up</h2>
+  </div>
+  <!-- Login Form -->
+  <form>
+    <input type="text" id="username-signup" class="fadeIn third" name="signup" placeholder="username">
+    <input type="text" id="email-signup" class="fadeIn second" name="signup" placeholder="email">
+    <input type="text" id="password-signup" class="fadeIn third" name="signup" placeholder="password">
+    <input type="submit" class="fadeIn fourth" value="Sign up">
+  </form>
+  <!-- Remind Passowrd -->
+  <div id="formFooter">
+    <a href="/login">need to log in instead?</a>
+  </div>
 
-<form class="signup-form">
-    <div>
-      <label for="username-signup">username:</label>
-      <input type="text" id="username-signup" />
-    </div>
-    <div>
-      <label for="email-signup">email:</label>
-      <input type="text" id="email-signup" />
-    </div>
-    <div>
-      <label for="password-signup">password:</label>
-      <input type="password" id="password-signup" />
-    </div>
-    <div>
-      <button type="submit">signup</button>
-    </div>
+  </div>
 </form>
-
-<a href="/login">need to log in instead?</a>
 
 <script src="/js/signup.js"></script>

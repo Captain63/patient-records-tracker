@@ -67,7 +67,7 @@ router.post('/', (req, res) => {
     // send the user data back to the client as confirmation and save the session
     .then(dbUserData => {
       req.session.save(() => {
-        req.session.user_id = dbUserData.id;
+        req.session.id = dbUserData.id;
         req.session.username = dbUserData.username;
         req.session.logged_in = true;
     
@@ -106,7 +106,7 @@ router.post('/login',  (req, res) => {
         // otherwise, save the session, and return the user object and a success message
         req.session.save(() => {
           // declare session variables
-          req.session.user_id = dbUserData.id;
+          req.session.id = dbUserData.id;
           req.session.username = dbUserData.username;
           req.session.logged_in = true;
     
