@@ -30,7 +30,7 @@ router.get('/', (req, res) => {
 
 // GET /api/users/1 -- get a single user by id
 router.get('/:id', (req, res) => {
-    // Acess the User model and run the findOne() method to get a single user based on parameters
+    // Access the User model and run the findOne() method to get a single user based on parameters
     User.findOne({
       // when the data is sent back, exclude the password property
       attributes: { exclude: ['password'] },
@@ -117,17 +117,13 @@ router.post('/login',  (req, res) => {
 
 // POST /api/users/logout -- log out an existing user
 router.post('/logout', withAuth, (req, res) => {
-  if (req.session.logged_In) {
     req.session.destroy(() => {
       // 204 status is that a request has succeeded, but client does not need to go to a different page
         // (200 indicates success and that a newly updated page should be loaded, 201 is for a resource being created)
       res.status(204).end();
     });
-  } else {
-    // if there is no session, then the logout request will send back a no resource found status
-    res.status(404).end();
-  }
-})
+
+});
 
 // PUT /api/users/1 -- update an existing user
 router.put('/:id', withAuth, (req, res) => {
@@ -156,7 +152,7 @@ router.put('/:id', withAuth, (req, res) => {
         console.log(err);
         res.status(500).json(err);
       });
-  })
+})
 
 // DELETE /api/users/1 -- delete an existing user
 router.delete('/:id', withAuth, (req, res) => {
@@ -177,6 +173,6 @@ router.delete('/:id', withAuth, (req, res) => {
         console.log(err);
         res.status(500).json(err);
       });
-  });
+});
 
 module.exports = router;

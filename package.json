@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "watch": "nodemon server.js",
-    "seed": "npm run seeds/seed.js",
+    "seed": "node seeds/seed.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

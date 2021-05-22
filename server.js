@@ -28,7 +28,10 @@ const hbs = exphbs.create({ helpers });
 const sess = {
     //session secret is store in .env file as DB_SESSION_SECRET
     secret: process.env.DB_SESSION_SECRET,
-    cookie: { maxAge: 120000 },
+    cookie: { 
+      // 15 minutes in milliseconds
+      maxAge: 900000
+    },
     resave: false,
     saveUninitialized: true,
     store: new SequelizeStore({
@@ -62,5 +65,5 @@ app.use(routes);
 // force: true to reset the database and clear all values, updating any new relationships
 // force: false to maintain data - aka normal operation
 sequelize.sync({ force: false }).then(() => {
-    app.listen(PORT, () => console.log('Now listening'));
+    app.listen(PORT, () => console.log(`App listening on PORT ${PORT}`));
   });
