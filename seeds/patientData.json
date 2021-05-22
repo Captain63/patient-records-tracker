@@ -1,6 +1,9 @@
 [
     {
       "name": "Brandon Ford",
-      "birth_date": "06-17-1998"
+      "birth_date": "06-17-1998",
+      "email":"brandonford617@ahoo.com",
+      "address": "44131 east",
+      "doctor_id":1
     }
 ]

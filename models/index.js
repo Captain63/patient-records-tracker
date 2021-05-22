@@ -8,13 +8,13 @@ const Patient = require("./Patient");
 // Relationships
 
 // Associating Patient and Note
-Patient.hasMany(Note, {
+Patient.hasMany(Record, {
     foreignKey: "patient_id",
     // If patient is deleted, the associated notes should be deleted as well
     onDelete: "CASCADE"
 })
 
-Note.belongsTo(Patient, {
+Record.belongsTo(Patient, {
     foreignKey: "patient_id"
 })
 
@@ -28,11 +28,11 @@ Patient.belongsTo(User, {
 })
 
 // Associating User and Note
-User.hasMany(Note, {
+User.hasMany(Record, {
     foreignKey: "user_id"
 })
 
-Note.belongsTo(User, {
+Record.belongsTo(User, {
     foreignKey: "user_id"
 })
 
