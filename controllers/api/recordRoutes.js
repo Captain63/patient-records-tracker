@@ -12,43 +12,80 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 // Routes
 
-// GET /api/users -- get all records
-router.get('/', (req, res) => {
-    Record.findAll({
-        // Query configuration
-        attributes: [
-            'id',
-            'title',
-            'text',
-            'created_at',
-          ],
-        // Order the posts from most recent to least
-        order: [[ 'created_at', 'DESC']],
-        // From the User table, include the post creator's user name
-        // From the Comment table, include all comments
-        include: [
-            {
-                model: Patient,
-                attributes: ['name','birth_date']
-            }
-        ]
-    })
-    // return the posts
-    .then(dbRecordData => res.json(dbRecordData))
-    // if there was a server error, return the error
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
-});
+// // GET /api/users -- get all records
+// router.get('/', (req, res) => {
+//     Record.findAll({
+//         // Query configuration
+//         attributes: [
+//             'id',
+//             'title',
+//             'text',
+//             'created_at',
+//           ],
+//         // Order the posts from most recent to least
+//         order: [[ 'created_at', 'DESC']],
+//         // From the User table, include the post creator's user name
+//         // From the Comment table, include all comments
+//         include: [
+//             {
+//                 model: Patient,
+//                 attributes: ['name','birth_date']
+//             }
+//         ]
+//     })
+//     // return the posts
+//     .then(dbRecordData => res.json(dbRecordData))
+//     // if there was a server error, return the error
+//     .catch(err => {
+//         console.log(err);
+//         res.status(500).json(err);
+//     });
+// });
 
 // GET /api/patients/1 -- get a single record by id
-router.get('/:id', (req, res) => {
+// router.get('/:id', (req, res) => {
+//     // Access the User model and run the findOne() method to get a single user based on parameters
+//     Record.findOne({
+//       where: {
+//         // use id as the parameter for the request
+//         id: req.params.id
+//       },
+//       attributes: [
+//         'id',
+//         'title',
+//         'text',
+//         'created_at',
+//       ],
+//       include: [
+//         {
+//             model: Patient,
+//             attributes: ['name','birth_date']
+//         }
+//     ]
+//     })
+//       .then(dbRecordData => {
+//         if (!dbRecordData) {
+//           // if no user is found, return an error
+//           res.status(404).json({ message: 'No Record found with this id' });
+//           return;
+//         }
+//         // otherwise, return the data for the requested user
+//         res.json(dbRecordData);
+//       })
+//       .catch(err => {
+//         // if there is a server error, return that error
+//         console.log(err);
+//         res.status(500).json(err);
+//       });
+//   });
+
+// GET /api/patients/1 -- get all records from that patient
+router.get('/:patient_id', (req, res) => {
     // Access the User model and run the findOne() method to get a single user based on parameters
-    Record.findOne({
+    Record.findAll({
       where: {
         // use id as the parameter for the request
-        id: req.params.id
+        patient_id: req.params.patient_id
       },
       attributes: [
         'id',
