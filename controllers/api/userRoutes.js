@@ -12,23 +12,23 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 // Routes
 
-// GET /api/users -- get all users
-router.get('/', async (req, res) => {
+// // GET /api/users -- get all users
+// router.get('/', async (req, res) => {
 
-  try {
-    // Access the User model and run .findAll() method to get all users
-    const dbUserData = await User.findAll({
-      // when the data is sent back, exclude the password property
-      attributes: { exclude: ['password'] }
-    })
+//   try {
+//     // Access the User model and run .findAll() method to get all users
+//     const dbUserData = await User.findAll({
+//       // when the data is sent back, exclude the password property
+//       attributes: { exclude: ['password'] }
+//     })
 
-    // return the data as JSON formatted
-    res.json(dbUserData)
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }    
-});
+//     // return the data as JSON formatted
+//     res.json(dbUserData)
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }    
+// });
 
 // GET /api/users/1 -- get a single user by id
 router.get('/:id', async (req, res) => {
@@ -60,7 +60,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // POST /api/users -- add a new user
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
   // create method
   // expects an object in the form {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
   try {
@@ -87,7 +87,7 @@ router.post('/', (req, res) => {
 });
 
 // POST /api/users/login -- login route for a user
-router.post('/login',  (req, res) => {
+router.post('/login',  async (req, res) => {
   try {
     // findOne method by email to look for an existing user in the database with the email address entered
     // expects {email: 'lernantino@gmail.com', password: 'password1234'}
