@@ -3,7 +3,7 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 // the models
-const {  User } = require('../models');
+const {  User, Patient } = require('../models');
 // the authorization middleware to redirect unauthenticated users to the login page
 const withAuth = require('../utils/auth')
 // Express Session for the session data
@@ -23,8 +23,18 @@ router.get('/:id', withAuth, (req, res) => {
       },
       attributes: [
         'id',
+        'name',
         'username',
-        'email'
+        'email',
+        'password',
+        'address',
+        'location_zip',
+      ],
+      include: [
+        {
+          model: Patient,
+          attributes: ['id', 'name', 'birth_date', 'email', 'address' , 'doctor_id' , 'location_zip']
+        }
       ],
     })
       .then(dbUserData => {

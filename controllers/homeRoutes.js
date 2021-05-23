@@ -1,7 +1,7 @@
 // Dependencies
 const sequelize = require('../config/connection');
 const router = require('express').Router();
-const { User, Patient } = require('../models');
+const { User, Patient, Record } = require('../models');
 const withAuth = require('../utils/auth');
 const session = require('express-session');
 // Sequelize store to save the session so the user can remain logged in
@@ -28,7 +28,11 @@ router.get('/', withAuth, (req, res) => {
       {
         model: Patient,
         attributes: ['id', 'name', 'birth_date', 'email', 'address' , 'doctor_id' , 'location_zip']
-      }
+      },
+      {
+        model: Record,
+        attributes: ['id', 'title', 'text', 'patient_id', 'user_id' ]
+      },
     ]
   })
     .then(dbUserData => {
