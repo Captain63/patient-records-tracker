@@ -31,7 +31,7 @@ router.get('/', withAuth, (req, res) => {
       },
       {
         model: Record,
-        attributes: ['id', 'title', 'text', 'patient_id', 'user_id' ]
+        attributes: ['id', 'patient_name', 'title', 'text', 'patient_id', 'user_id', 'created_at' ]
       },
     ]
   })
@@ -52,10 +52,11 @@ router.get('/', withAuth, (req, res) => {
       });
 })
   
-// Render the login page.  If the user is logged in, redirect to the home page.
+
 router.get('/settings', (req, res) => {
   res.render('settings');
 });
+
 
 // Render the login page.  If the user is logged in, redirect to the home page.
 router.get('/login', (req, res) => {

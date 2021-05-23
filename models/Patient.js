@@ -19,6 +19,7 @@ Patient.init(
     name: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true,
     },
     birth_date: {
       type: DataTypes.DATEONLY,

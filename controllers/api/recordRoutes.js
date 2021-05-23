@@ -2,7 +2,7 @@
 // Express.js connection
 const router = require('express').Router();
 // Patient models
-const { Record, Patient } = require('../../models');
+const { Record, Patient, User } = require('../../models');
 // Express Session for the session data
 const session = require('express-session');
 // Authorization Helper
@@ -11,6 +11,54 @@ const withAuth = require('../../utils/auth');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 // Routes
+
+// api/record/create
+
+
+// A route to render the dashboard page, only for a logged in user
+router.get('/create', withAuth, (req, res) => {
+  // Access the User model and run the findOne() method to get a single user based on parameters
+  User.findOne({
+    // when the data is sent back, exclude the password property
+    where: {
+      username: req.session.username
+    },
+    attributes: [
+      'id',
+      'name',
+      'username',
+      'email',
+      'password',
+      'address',
+      'location_zip',
+    ],
+    include: [
+      {
+        model: Patient,
+        attributes: ['id', 'name', 'birth_date', 'email', 'address' , 'doctor_id' , 'location_zip']
+      },
+      {
+        model: Record,
+        attributes: ['id', 'patient_name', 'title', 'text', 'patient_id', 'user_id', 'created_at' ]
+      },
+    ]
+  })
+    .then(dbUserData => {
+        if (!dbUserData) {
+          // if no user is found, return an error
+          res.status(404).json({ message: 'No user found with this id' });
+          return;
+        }
+        // otherwise, return the data for the requested user
+        const user = dbUserData.get({ plain: true });
+        res.render('createrecord', { user, logged_in: true });
+      })
+      .catch(err => {
+        // if there is a server error, return that error
+        console.log(err);
+        res.status(500).json(err);
+      });
+})
 
 // // GET /api/users -- get all records
 // router.get('/', (req, res) => {

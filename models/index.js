@@ -18,6 +18,10 @@ Record.belongsTo(Patient, {
     foreignKey: "patient_id"
 })
 
+Record.belongsTo(Patient, {
+    foreignKey: "patient_name"
+})
+
 // Associating User and Patient
 User.hasMany(Patient, {
     foreignKey: "doctor_id"

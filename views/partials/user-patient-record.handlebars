@@ -1,11 +1,25 @@
 {{#each user.records as |record| }}
-    <a href="/" class="list-group-item list-group-item-action active py-3 lh-tight text-nowrap" aria-current="true">
-        <div class="colum align-center mb-5">
-            <div class="col-md-6">
-              <h2> {{record.title}}</h2>
+    <a href="/" class="userPatientsContainer container row text-nowrap col-5" aria-current="true">
+        
+
+            <div class="rowDate row">
+                <h4>Created On:</h4>
+                <h4> {{format_date record.created_at}}</h4>
             </div>
-        </div> 
+
+            <div class="rowName row">
+                <h4>Patient Name:</h4>
+                <h4> {{record.patient_name}}</h4>
+            </div>
+        
+       
+            <div class="rowTilte  row">
+                <h4>Subject:</h4>
+                <h4> {{record.title}}</h4>
+            </div>
+       
     </a>
 {{/each}}
 
 <script src="/js/recordDisplay.js"></script>
+
