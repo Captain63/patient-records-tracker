@@ -21,9 +21,14 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     username: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true,
     },
     email: {
       type: DataTypes.STRING,
@@ -39,6 +44,14 @@ User.init(
       validate: {
         len: [8],
       },
+    },
+    address: {
+      type: DataTypes.STRING,
+      allowNull:true,
+    },
+    location_zip: {
+      type: DataTypes.INTEGER,
+      allowNull:false,
     },
   },
   {

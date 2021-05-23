@@ -12,16 +12,22 @@ router.get('/', withAuth, (req, res) => {
   // Access the User model and run the findOne() method to get a single user based on parameters
   User.findOne({
     // when the data is sent back, exclude the password property
-    attributes: { exclude: ['password'] },
+    where: {
+      username: req.session.username
+    },
     attributes: [
       'id',
+      'name',
       'username',
-      'email'
+      'email',
+      'password',
+      'address',
+      'location_zip',
     ],
     include: [
       {
         model: Patient,
-        attributes: ['id', 'name', 'birth_date', 'email', 'address' , 'doctor_id']
+        attributes: ['id', 'name', 'birth_date', 'email', 'address' , 'doctor_id' , 'location_zip']
       }
     ]
   })

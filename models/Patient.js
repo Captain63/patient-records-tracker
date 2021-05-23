@@ -36,6 +36,10 @@ Patient.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    location_zip: {
+      type: DataTypes.INTEGER,
+      allowNull:false,
+    },
     doctor_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
