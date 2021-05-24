@@ -1,9 +1,9 @@
-{{#each patients as |patient| }}
-    <a href="/" class="list-group-item list-group-item-action active py-3 lh-tight text-nowrap" aria-current="true">
-        <div class="colum align-center mb-5">
-            <div class="col-md-6">
-              <h2> {{patient.name}}</h2>
-            </div>
-        </div> 
-    </a>
+{{#each user.patients as |patient| }}
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="/api/records/{{patient.id}}" data-toggle="collapse" id="recordDisplay" data-target="#collapseTwo"
+            aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>{{patient.name}}</span>
+        </a>
+    </li>
 {{/each}}

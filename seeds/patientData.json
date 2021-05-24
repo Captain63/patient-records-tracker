@@ -1,9 +1,44 @@
 [
     {
-      "name": "Brandon Ford",
-      "birth_date": "06-17-1998",
-      "email":"brandonford617@ahoo.com",
+      "name": "Tom",
+      "birth_date": "06-17-2001",
+      "email":"tom@yahoo.com",
       "address": "44131 east",
       "doctor_id":1
+    },
+    {
+      "name": "Juliet",
+      "birth_date": "09-17-2002",
+      "email":"Juliet@yahoo.com",
+      "address": "44131 south",
+      "doctor_id":2
+    },
+    {
+      "name": "Susie",
+      "birth_date": "07-17-2003",
+      "email":"susie@yahoo.com",
+      "address": "44131 north",
+      "doctor_id":3
+    },
+    {
+      "name": "Roger",
+      "birth_date": "01-17-2004",
+      "email":"roger@yahoo.com",
+      "address": "44131 northwest",
+      "doctor_id":1
+    },
+    {
+      "name": "Ashley",
+      "birth_date": "05-17-2005",
+      "email":"ashley@yahoo.com",
+      "address": "44131 eastwest",
+      "doctor_id":2
+    },
+    {
+      "name": "Colbie",
+      "birth_date": "02-17-2006",
+      "email":"colbie@yahoo.com",
+      "address": "44131 eastsouth",
+      "doctor_id":3
     }
 ]

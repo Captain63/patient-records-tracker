@@ -1,7 +1,17 @@
 [
     {
-      "username": "Brandonford",
-      "email": "brandonford617@yahoo.com",
+      "username": "Brandon",
+      "email": "brandon@yahoo.com",
+      "password": "password1234"
+    },
+    {
+      "username": "Audrey",
+      "email": "audrey@yahoo.com",
+      "password": "password1234"
+    },
+    {
+      "username": "Romeo",
+      "email": "romeo@yahoo.com",
       "password": "password1234"
     }
 ]
