@@ -33,4 +33,4 @@ async function createRecordFormHandler(event) {
     }
 }
 
-document.querySelector('#create').addEventListener('click', createRecordFormHandler);
+document.querySelector('#createrecord').addEventListener('click', createRecordFormHandler);
