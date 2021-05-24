@@ -2,7 +2,7 @@
 // Express.js connection
 const router = require('express').Router();
 // Patient models
-const { Patient} = require('../../models');
+const { Patient, User, Record } = require('../../models');
 // Express Session for the session data
 const session = require('express-session');
 // Authorization Helper
@@ -12,19 +12,50 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 // Routes
 
-// GET /api/users -- get all users
-router.get('/', (req, res) => {
-    // Access the User model and run .findAll() method to get all users
-    Patient.findAll({
-    })
-      // return the data as JSON formatted
-      .then(dbPatientData => res.json(dbPatientData))
-      // if there is a server error, return that error
+// A route to render the dashboard page, only for a logged in user
+router.get('/create', withAuth, (req, res) => {
+  // Access the User model and run the findOne() method to get a single user based on parameters
+  User.findOne({
+    // when the data is sent back, exclude the password property
+    where: {
+      username: req.session.username
+    },
+    attributes: [
+      'id',
+      'name',
+      'username',
+      'email',
+      'password',
+      'address',
+      'location_zip',
+    ],
+    include: [
+      {
+        model: Patient,
+        attributes: ['id', 'name', 'birth_date', 'email', 'address' , 'doctor_id' , 'location_zip']
+      },
+      {
+        model: Record,
+        attributes: ['id', 'patient_name', 'title', 'text', 'patient_id', 'user_id', 'created_at' ]
+      },
+    ]
+  })
+    .then(dbUserData => {
+        if (!dbUserData) {
+          // if no user is found, return an error
+          res.status(404).json({ message: 'No user found with this id' });
+          return;
+        }
+        // otherwise, return the data for the requested user
+        const user = dbUserData.get({ plain: true });
+        res.render('createpatient', { user, logged_in: true });
+      })
       .catch(err => {
+        // if there is a server error, return that error
         console.log(err);
         res.status(500).json(err);
       });
-  });
+})
 
 // GET /api/patients/1 -- get a single user by id
 router.get('/:id', (req, res) => {
@@ -56,13 +87,22 @@ router.post('/', (req, res) => {
   // create method
   Patient.create({
     name: req.body.name,
-    birth_date: req.body.birth_date
+    birth_date: req.body.birth_date,
+    email: req.body.email,
+    address: req.body.address,
+    location_zip: req.body.location_zip,
+    doctor_id: req.body.doctor_id
+   
   })
     // send the patient data back to the client as confirmation and save the session
     .then(dbPatientData => {
       req.session.save(() => {
         req.session.name = dbPatientData.name;
         req.session.birth_date = dbPatientData.birth_date;
+        req.session.email = dbPatientData.email;
+        req.session.address = dbPatientData.address;
+        req.session.location_zip = dbPatientData.location_zip;
+        req.session.doctor_id = dbPatientData.doctor_id ;
     
         res.json(dbPatientData);
       });

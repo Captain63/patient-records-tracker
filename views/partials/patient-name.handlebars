@@ -1,6 +1,6 @@
 {{#each user.patients as |patient| }}
     <li class="nav-item">
-        <a class="nav-link collapsed" href="/api/records/{{patient.id}}" data-toggle="collapse" id="recordDisplay" data-target="#collapseTwo"
+        <a class="nav-link collapsed patient-nav-link" href="/api/records/{{patient.id}}" data-toggle="collapse" id="recordDisplay" data-target="#collapseTwo"
             aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-cog"></i>
             <span>{{patient.name}}</span>

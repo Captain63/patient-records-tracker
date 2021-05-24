@@ -1,17 +1,26 @@
 [
     {
-      "username": "Brandon",
+      "name": "Brandon",
+      "username": "Brandonuser",
       "email": "brandon@yahoo.com",
-      "password": "password1234"
+      "password": "password1234",
+      "address": "30982 information dr",
+      "location_zip":"11111"
     },
     {
-      "username": "Audrey",
+      "name":"Audrey",
+      "username": "Audreyuser",
       "email": "audrey@yahoo.com",
-      "password": "password1234"
+      "password": "password1234",
+      "address": "30982 information lane",
+      "location_zip":"11111"
     },
     {
-      "username": "Romeo",
+      "name":"Romeo",
+      "username": "Romeouser",
       "email": "romeo@yahoo.com",
-      "password": "password1234"
+      "password": "password1234",
+      "address": "30982 information circle",
+      "location_zip":"11111"
     }
 ]

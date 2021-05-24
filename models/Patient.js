@@ -19,6 +19,7 @@ Patient.init(
     name: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true,
     },
     birth_date: {
       type: DataTypes.DATEONLY,
@@ -35,6 +36,10 @@ Patient.init(
     address: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    location_zip: {
+      type: DataTypes.INTEGER,
+      allowNull:false,
     },
     doctor_id: {
       type: DataTypes.INTEGER,

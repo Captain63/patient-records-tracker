@@ -1,7 +1,7 @@
 // Dependencies
 const sequelize = require('../config/connection');
 const router = require('express').Router();
-const { User, Patient } = require('../models');
+const { User, Patient, Record } = require('../models');
 const withAuth = require('../utils/auth');
 const session = require('express-session');
 // Sequelize store to save the session so the user can remain logged in
@@ -12,17 +12,27 @@ router.get('/', withAuth, (req, res) => {
   // Access the User model and run the findOne() method to get a single user based on parameters
   User.findOne({
     // when the data is sent back, exclude the password property
-    attributes: { exclude: ['password'] },
+    where: {
+      username: req.session.username
+    },
     attributes: [
       'id',
+      'name',
       'username',
-      'email'
+      'email',
+      'password',
+      'address',
+      'location_zip',
     ],
     include: [
       {
         model: Patient,
-        attributes: ['id', 'name', 'birth_date', 'email', 'address' , 'doctor_id']
-      }
+        attributes: ['id', 'name', 'birth_date', 'email', 'address' , 'doctor_id' , 'location_zip']
+      },
+      {
+        model: Record,
+        attributes: ['id', 'patient_name', 'title', 'text', 'patient_id', 'user_id', 'created_at' ]
+      },
     ]
   })
     .then(dbUserData => {
@@ -42,10 +52,11 @@ router.get('/', withAuth, (req, res) => {
       });
 })
   
-// Render the login page.  If the user is logged in, redirect to the home page.
+
 router.get('/settings', (req, res) => {
   res.render('settings');
 });
+
 
 // Render the login page.  If the user is logged in, redirect to the home page.
 router.get('/login', (req, res) => {

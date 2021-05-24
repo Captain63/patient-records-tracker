@@ -100,11 +100,230 @@
   margin-right: 0px !important;
 }
 
-.containerC {
-  width: 600px !important;
+.rowDate {
+  width: auto !important;
+  position: relative;
+  padding-left: 2%;
 }
 
+.rowName {
+  width: auto !important;
+  position: relative;
+  padding-left: 4%;
+}
 
+.rowTilte {
+  width: auto !important;
+  position: relative;
+  padding-left: 4%;
+}
+.containerC {
+  width: 80% !important;
+}
+
+.detailT {
+  font-size: 30px;
+}
+.detialsLables {
+  font-size: 40px;
+  margin: 0 100px;
+}
+.detialsLables input {
+  width: 400px !important;
+}
+
+@media (max-width: 1822px) {
+  .containerC {
+    width: 70% !important;
+  }
+}
+@media (max-width: 1600px) {
+  .containerC {
+    width: 100% !important;
+  }
+  
+}
+.userPatientsContainer {
+  background-color: rgb(214, 214, 214);
+  margin: 10px;
+  margin-left: 10px !important;
+  color: #000;
+  width: 50% !important;
+  padding-left:0 !important;
+  padding-right:0 !important;
+}
+.homeContainer {
+  height: 100%;
+}
+
+.mainContainer {
+  height: 100%;
+}
+
+.card {
+  height: fit-content;
+  width: 95%;
+}
+
+.contact{
+  padding: 4%;
+  height: 400px;
+}
+.col-md-3{
+  background: #ff9b00;
+  padding: 4%;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+.contact-info{
+  margin-top:10%;
+}
+.contact-info img{
+  margin-bottom: 15%;
+}
+.contact-info h2{
+  margin-bottom: 10%;
+}
+.col-md-9{
+  background: #fff;
+  padding: 3%;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+.contact-form label{
+  font-weight:600;
+}
+.contact-form button{
+  background: #25274d;
+  color: #fff;
+  font-weight: 600;
+  width: 25%;
+}
+.contact-form button:focus{
+  box-shadow:none;
+}
+
+.cI1 {
+  margin-top: 5%;
+  margin-left: 6%;
+  width: 230px;
+}
+
+.cI1 input {
+width: 200px !important;
+height: 40px;
+}
+
+.cI1 label {
+  font-size: 20px;
+  white-space: nowrap;
+}
+#createrecord {
+  margin-left:46%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 555px !important;
+}
+.sidebar {
+  width: 500px !important;
+}
+.sidebar-brand-text {
+  font-size: 28px;
+}
+
+.sidebar-heading {
+  font-size: 20px !important;
+}
+.createlink  {
+  text-overflow: none;
+  width:500px !important;
+}
+
+.createlink a {
+  width:500px !important
+}
+
+.createlink a span {
+margin-left: 265px;
+margin-bottom:30px !important ;
+font-size: 12px !important;
+}
+.patient-nav-link {
+  width: 500px !important;
+}
+
+.patient-nav-link span {
+  font-size: 20px !important;
+}
+
+#create h6 {
+  margin-top:75px;
+  position:relative;
+}
+#recordTitle {
+  width: 100%;
+  height: 20px;
+  text-align:top;
+  margin-top:10px;
+  font-size: 20px;
+  margin-left: 5%
+}
+#information {
+  /* width: 1200px; */
+  height: 500px;
+  text-align:top;
+  margin-top:0;
+  font-size: 20px;
+  margin-left: 5%
+}
+
+#infoID {
+  margin-top:15px;
+}
+.card {
+  width:99% !important;
+  margin-bottom: 30%;
+  padding-left:0 !important;
+}
+.card-body {
+  width:100% !important;
+  height: 810px !important;
+
+}
+.text-bottom {
+  margin-top: 18%;
+  height: 75px;
+}
+#createpatient {
+  height: 100% !important;
+  width: 100% !important;
+}
+#update {
+  height: 100% !important;
+  width: 100% !important;
+}
+.col-sm-10 {
+  padding-right: 0  !important;
+  padding-left: 0  !important;
+}
+
+.wrapper {
+  padding: 10px 5px !important;
+}
+.wrapperC {
+  padding: 10px !important;
+  
+}
+.bg-grey {
+  background-color: #b5b7c4 ;
+}
+
+.flex-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+}
   html {
     font-family: sans-serif;
     line-height: 1.15;
@@ -646,8 +865,6 @@
   .row {
     display: flex;
     flex-wrap: wrap;
-    margin-right: -0.75rem;
-    margin-left: -0.75rem;
   }
   
   .no-gutters {
@@ -10569,9 +10786,6 @@
   }
   
   @media (min-width: 768px) {
-    .sidebar {
-      width: 14rem !important;
-    }
     .sidebar .nav-item .collapse {
       position: relative;
       left: 0;

@@ -12,23 +12,23 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 // Routes
 
-// GET /api/users -- get all users
-router.get('/', async (req, res) => {
+// // GET /api/users -- get all users
+// router.get('/', async (req, res) => {
 
-  try {
-    // Access the User model and run .findAll() method to get all users
-    const dbUserData = await User.findAll({
-      // when the data is sent back, exclude the password property
-      attributes: { exclude: ['password'] }
-    })
+//   try {
+//     // Access the User model and run .findAll() method to get all users
+//     const dbUserData = await User.findAll({
+//       // when the data is sent back, exclude the password property
+//       attributes: { exclude: ['password'] }
+//     })
 
-    // return the data as JSON formatted
-    res.json(dbUserData)
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }    
-});
+//     // return the data as JSON formatted
+//     res.json(dbUserData)
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }    
+// });
 
 // GET /api/users/1 -- get a single user by id
 router.get('/:id', async (req, res) => {
