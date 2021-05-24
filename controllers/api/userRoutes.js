@@ -60,7 +60,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // POST /api/users -- add a new user
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
   // create method
   // expects an object in the form {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
   try {
@@ -87,7 +87,7 @@ router.post('/', (req, res) => {
 });
 
 // POST /api/users/login -- login route for a user
-router.post('/login',  (req, res) => {
+router.post('/login', async (req, res) => {
   try {
     // findOne method by email to look for an existing user in the database with the email address entered
     // expects {email: 'lernantino@gmail.com', password: 'password1234'}
