@@ -59,6 +59,22 @@ router.get('/create', withAuth, (req, res) => {
         res.status(500).json(err);
       });
 })
+// create new record
+router.post('/', withAuth, (req, res) => {
+  // expects object of the form {title: 'Sample Title Here', post_text: 'Here's some sample text for a post.', user_id: 1}
+  Record.create({
+      patient_name: req.body.patient_name,
+      patient_id: req.body.patient_id,
+      title: req.body.title,
+      text: req.body.text,
+      user_id: req.body.user_id
+  })
+  .then(dbRecordData => res.json(dbRecordData))
+  .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+  });
+});
 
 // // GET /api/users -- get all records
 // router.get('/', (req, res) => {

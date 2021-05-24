@@ -118,11 +118,33 @@
   padding-left: 4%;
 }
 .containerC {
-  width: 600px !important;
+  width: 80% !important;
 }
 
+.detailT {
+  font-size: 30px;
+}
+.detialsLables {
+  font-size: 25px;
+  margin: 0 100px;
+}
+.detialsLables input {
+  width: 300px !important;
+}
+
+@media (max-width: 1822px) {
+  .containerC {
+    width: 70% !important;
+  }
+}
+@media (max-width: 1600px) {
+  .containerC {
+    width: 100% !important;
+  }
+  
+}
 .userPatientsContainer {
-  background-color: rgb(165, 165, 165);
+  background-color: rgb(214, 214, 214);
   margin: 10px;
   margin-left: 10px !important;
   color: #000;
@@ -139,7 +161,8 @@
 }
 
 .card {
-  height: 100%;
+  height: fit-content;
+  width: 95%;
 }
 
 .contact{
@@ -181,19 +204,84 @@
 }
 
 .cI1 {
-  margin-top: 1%;
-  margin-left: 2%;
+  margin-top: 5%;
+  margin-left: 6%;
+  width: 230px;
 }
 
-#information {
+.cI1 input {
+width: 200px !important;
+height: 40px;
+}
+
+.cI1 label {
+  font-size: 20px;
+  white-space: nowrap;
+}
+#create {
+  margin-left:46%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 555px !important;
+}
+.sidebar {
+  width: 300px !important;
+}
+.sidebar-brand-text {
+  font-size: 18px;
+}
+
+.sidebar-heading {
+  font-size: 12px !important;
+}
+.createlink  {
+  font-size: 12px !important;
+  text-overflow: none;
+  width:300px !important;
+}
+
+.createlink a {
+  width:300px !important;
+  margin:0;
+}
+
+.createlink a span {
+margin-left: 130px;
+}
+.patient-nav-link {
+  width: 300px !important;
+}
+
+.patient-nav-link span {
+  font-size: 20px !important;
+}
+
+#create h6 {
+  margin-top:75px;
+  position:relative;
+}
+#recordTitle {
   width: 100%;
-  height: 200px;
+  height: 20px;
   text-align:top;
-  margin-top: 3%;
+  margin-top:10px;
+  font-size: 20px;
+  margin-left: 5%
+}
+#information {
+  /* width: 1200px; */
+  height: 500px;
+  text-align:top;
+  margin-top:0;
+  font-size: 20px;
+  margin-left: 5%
 }
 
+#infoID {
+  margin-top:15px;
+}
 .card {
-  width:100% !important;
+  width:99% !important;
   margin: 0 18px;
 }
 
@@ -10659,9 +10747,6 @@
   }
   
   @media (min-width: 768px) {
-    .sidebar {
-      width: 14rem !important;
-    }
     .sidebar .nav-item .collapse {
       position: relative;
       left: 0;
