@@ -125,11 +125,11 @@
   font-size: 30px;
 }
 .detialsLables {
-  font-size: 25px;
+  font-size: 40px;
   margin: 0 100px;
 }
 .detialsLables input {
-  width: 300px !important;
+  width: 400px !important;
 }
 
 @media (max-width: 1822px) {
@@ -225,31 +225,31 @@ height: 40px;
   height: 555px !important;
 }
 .sidebar {
-  width: 300px !important;
+  width: 500px !important;
 }
 .sidebar-brand-text {
-  font-size: 18px;
+  font-size: 28px;
 }
 
 .sidebar-heading {
-  font-size: 12px !important;
+  font-size: 20px !important;
 }
 .createlink  {
-  font-size: 12px !important;
   text-overflow: none;
-  width:300px !important;
+  width:500px !important;
 }
 
 .createlink a {
-  width:300px !important;
-  margin:0;
+  width:500px !important
 }
 
 .createlink a span {
-margin-left: 130px;
+margin-left: 265px;
+margin-bottom:30px !important ;
+font-size: 12px !important;
 }
 .patient-nav-link {
-  width: 300px !important;
+  width: 500px !important;
 }
 
 .patient-nav-link span {
@@ -282,9 +282,48 @@ margin-left: 130px;
 }
 .card {
   width:99% !important;
-  margin: 0 18px;
+  margin-bottom: 30%;
+  padding-left:0 !important;
+}
+.card-body {
+  width:100% !important;
+  height: 810px !important;
+
+}
+.text-bottom {
+  margin-top: 18%;
+  height: 75px;
+}
+#createpatient {
+  height: 100% !important;
+  width: 100% !important;
+}
+#update {
+  height: 100% !important;
+  width: 100% !important;
+}
+.col-sm-10 {
+  padding-right: 0  !important;
+  padding-left: 0  !important;
 }
 
+.wrapper {
+  padding: 10px 5px !important;
+}
+.wrapperC {
+  padding: 10px !important;
+  
+}
+.bg-grey {
+  background-color: #b5b7c4 ;
+}
+
+.flex-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+}
   html {
     font-family: sans-serif;
     line-height: 1.15;
