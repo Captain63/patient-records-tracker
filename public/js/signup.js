@@ -6,6 +6,9 @@ async function signupFormHandler(event) {
     const username = document.querySelector('#username-signup').value.trim();
     const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
+    const name = document.querySelector('#name-signup').value.trim();
+    const location_zip = document.querySelector('#location-zip-signup').value.trim();
+
 
     // if all three fields have content
     if (username && email && password) {
@@ -15,7 +18,9 @@ async function signupFormHandler(event) {
             body: JSON.stringify({
                 username,
                 email,
-                password
+                password,
+                name,
+                location_zip
             }),
             headers: {'Content-Type': 'application/json'}
         });

@@ -59,31 +59,33 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// POST /api/users -- add a new user
-router.post('/', async (req, res) => {
+router.post('/', (req, res) => {
   // create method
   // expects an object in the form {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
-  try {
-    const dbUserData = await User.create({
-      username: req.body.username,
-      email: req.body.email,
-      password: req.body.password
+  User.create({
+    username: req.body.username,
+    email: req.body.email,
+    password: req.body.password,
+    name:req.body.name,
+    location_zip:req.body.location_zip
+  })
+    // send the user data back to the client as confirmation and save the session
+    .then(dbUserData => {
+      req.session.save(() => {
+        req.session.user_id = dbUserData.id;
+        req.session.username = dbUserData.username;
+        req.session.name = dbUserData.name;
+        req.session.location_zip = dbUserData.location_zip
+        req.session.logged_in = true;
+    
+        res.json(dbUserData);
+      });
     })
-
-    req.session.save(() => {
-      req.session.id = dbUserData.id;
-      req.session.username = dbUserData.username;
-      req.session.logged_in = true;
-  
-      // send the user data back to the client as confirmation and save the session
-      res.json(dbUserData);
-    });
-  } catch (err) {
-    console.log(err);
-
     // if there is a server error, return that error
-    res.status(500).json(err);
-  }
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 // POST /api/users/login -- login route for a user
@@ -136,7 +138,7 @@ router.post('/logout', withAuth, (req, res) => {
 
 });
 
-// PUT /api/users/1 -- update an existing user
+
 router.put('/update/:id', withAuth, async (req, res) => {
     try {
       // update method
@@ -166,27 +168,27 @@ router.put('/update/:id', withAuth, async (req, res) => {
     }
 })
 
-// PUT api/record/1-- update a post's title or text
-router.put('/update/:id', withAuth, (req, res) => {
-  User.update(req.body,
-      {
-          where: {
-              id: req.session.id
-          }
-      }
-  )
-  .then(dbRecordData => {
-    if (!dbRecordData) {
-      res.status(404).json({ message: 'No record found with this id' });
-      return;
-    } 
-    res.json(dbRecordData);
-  })
-  .catch(err => {
-    console.log(err);
-    res.status(500).json(err);
-  });
-});
+
+// router.put('/update/:id', withAuth, (req, res) => {
+//   User.update(req.body,
+//       {
+//           where: {
+//               id: req.session.id
+//           }
+//       }
+//   )
+//   .then(dbRecordData => {
+//     if (!dbRecordData) {
+//       res.status(404).json({ message: 'No record found with this id' });
+//       return;
+//     } 
+//     res.json(dbRecordData);
+//   })
+//   .catch(err => {
+//     console.log(err);
+//     res.status(500).json(err);
+//   });
+// });
 
 
 // DELETE /api/users/1 -- delete an existing user
