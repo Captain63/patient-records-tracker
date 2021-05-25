@@ -215,13 +215,12 @@ box-shadow:none;
 }
 
 .cI1 {
-margin-top: 5%;
-margin-left: 6%;
+
 width: 230px;
 }
 
 .cI1 input {
-width: 300px !important;
+width: 100% !important;
 height: 40px;
 }
 
@@ -229,12 +228,7 @@ height: 40px;
 font-size: 20px;
 white-space: nowrap;
 }
-#createrecord {
-margin-left:46%;
-margin-top: 10px;
-margin-bottom: 10px;
-height: 555px !important;
-}
+
 .sidebar {
 width: 500px !important;
 }
@@ -281,7 +275,10 @@ height: 20px;
 text-align:top;
 margin-top:10px;
 font-size: 20px;
-margin-left: 5%
+}
+
+#recordTitle input {
+  margin: 0!important;
 }
 #information {
 /* width: 1200px; */
@@ -289,7 +286,6 @@ height: 500px;
 text-align:top;
 margin-top:0;
 font-size: 20px;
-margin-left: 5%
 }
 
 #infoID {
@@ -312,6 +308,8 @@ margin-left: 10px; */
 margin:10px;
 background-color: #b5b7c4 ;
 }
+
+
 #content-wrapper {
 height: auto !important;
 background-color: #b5b7c4 !important ;
@@ -322,6 +320,8 @@ width:100% !important;
 height: 100% !important;
 position: relative !important;
 padding:0 !important;
+border: solid 6px #1cc88a !important;
+border-radius: 30px !important;
 
 }
 .text-bottom {
@@ -335,10 +335,21 @@ align-items: center;
 #createpatient {
 height: 100% !important;
 width: 100% !important;
+border-bottom-left-radius: 23px;
+border-bottom-right-radius: 23px;
 }
+#createrecord {
+  height: 100% !important;
+  width: 100% !important;
+  border-bottom-left-radius: 23px;
+  border-bottom-right-radius: 23px;
+}
+
 #update {
 height: 100% !important;
 width: 100% !important;
+border-bottom-left-radius: 23px;
+border-bottom-right-radius: 23px;
 
 }
 .col-sm-10 {
