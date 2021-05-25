@@ -1,7 +1,15 @@
+
 <div class="card-body bg-dark">
-	<div class="column">
-        <h2 class="mb-3 text-white">Recent Notes</h2>
+	<div class="colum col-12">
+    	<div class="wrapper col-12">
+    	  	<div class="row">
+    	      	<h3 class="mb-3 text-white text-center">Recent Records</h3>
+    	    	<div class="button-right">
+    	    	  <a class="btn btn-primary-s" href="/api/records/create/{{patient.id}}" role="button">Create New Record</a>
+    	    	  <a class="btn btn-green " href="/api/patients/details/{{patient.id}}" role="button">Patient Details</a>
+    	    	</div>
+    	 	</div>
+    	</div>
 		{{>user-patient-record}}
     </div>
 </div>
-

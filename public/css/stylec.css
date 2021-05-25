@@ -147,23 +147,9 @@ background-color: #343a40 !important;
 margin-right: 0px !important;
 }
 
-.rowDate {
-width: auto !important;
-position: relative;
-padding-left: 2%;
-}
 
-.rowName {
-width: auto !important;
-position: relative;
-padding-left: 4%;
-}
 
-.rowTilte {
-width: auto !important;
-position: relative;
-padding-left: 4%;
-}
+
 .containerC {
 width: 80% !important;
 }
@@ -206,15 +192,7 @@ font-size: 20px !important
 .text-green {
 color: rgb(150, 223, 150) !important;
 }
-.userPatientsContainer {
-background-color: rgb(214, 214, 214);
-margin: 10px auto;
-color: #000;
-width: 99% !important;
-padding-left:0 !important;
-padding-right:0 !important;
-border-radius: 10px;
-}
+
 .button-right {
   position: absolute;
   right:1%;
@@ -805,7 +783,7 @@ template {
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-bottom: 0.5rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.2;
 }
 
@@ -2582,6 +2560,27 @@ textarea.form-control {
   border-color: #1cc88a;
   box-shadow: 0 0 0 0.2rem rgba(28, 200, 138, 0.25);
 }
+.rowC {
+  width: auto !important;
+  position: relative;
+  padding-left:2% ;
+}
+
+.userPatientsContainer {
+  background-color: rgb(214, 214, 214);
+  margin: 10px auto;
+  color: #000;
+  width: auto !important;
+  padding-left:0 !important;
+  padding-right:0 !important;
+  border-radius: 10px;
+  text-decoration: none !important;
+  }
+
+  .userPatientsContainer:hover {
+    box-shadow: 0px 0px 3px rgb(255, 255, 255);
+    color: red;
+  }
 
 .invalid-feedback {
   display: none;
