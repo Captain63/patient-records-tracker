@@ -22,7 +22,7 @@ Patient.init(
       unique: true,
     },
     birth_date: {
-      type: DataTypes.DATEONLY,
+      type: DataTypes.DATE,
       allowNull: false
     },
     email: {
@@ -52,7 +52,6 @@ Patient.init(
   },
   {
     sequelize,
-    timestamps: true,
     freezeTableName: true,
     underscored: true,
     modelName: 'patient',

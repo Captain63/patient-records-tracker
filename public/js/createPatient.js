@@ -1,6 +1,6 @@
 // Login form handler
 async function createPatientFormHandler(event) {
- 
+    event.preventDefault();
 
     // get the information from the login form
     const name = document.querySelector('#patientName').value.trim();
