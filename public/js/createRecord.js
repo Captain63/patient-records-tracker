@@ -30,7 +30,7 @@ async function createRecordFormHandler(event) {
             let result = await response.json()
             alert(result.message)
         }
-    }
+    } 
 }
 
-document.querySelector('#createrecord').addEventListener('click', createRecordFormHandler);
+// document.querySelector('#createrecord').addEventListener('click', createRecordFormHandler);

@@ -36,6 +36,22 @@ Record.init(
                 len: [1]
             }
         },
+        patient_name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            references: {
+                model: "patient",
+                key: "name"
+            } 
+        },
+        user_username: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            references: {
+                model: "user",
+                key: "username"
+            } 
+        },
         patient_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -56,7 +72,6 @@ Record.init(
     {
         sequelize,
         freezeTableName: true,
-        timestamps: true,
         underscored: true,
         modelName: 'record'
     }

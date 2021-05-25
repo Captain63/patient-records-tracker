@@ -1,27 +1,27 @@
 // Login form handler
-async function createPatientFormHandler(event) {
+async function createPatientRecordFormHandler(event) {
  
 
     // get the information from the login form
-    const name = document.querySelector('#patientName').value.trim();
-    const birth_date = document.querySelector('#birth_date').value.trim();
-    const email = document.querySelector('#paitentEmail').value.trim();
-    const address = document.querySelector('#patientAddress').value.trim();
-    const location_zip = document.querySelector('#location_zip').value.trim();
-    const doctor_id = document.querySelector('#doctor_id').value.trim();
+
+    const title = document.querySelector('#recordTitle').value.trim();
+    const text = document.querySelector('#information').value.trim();
+    // get the post id from the url
+    const patient_id = window.location.toString().split('/')[
+        window.location.toString().split('/').length - 1]
+    ;
+    const patient_name = document.querySelector('#patientDisplayName').textContent;
     
     // if both fields have content
-    if (name && birth_date && email && address && location_zip && doctor_id) {
+    if (title&& text) {
         // POST to the login route with the user information
-        const response = await fetch('/api/patients/', {
+        const response = await fetch('/api/records/', {
             method: 'post',
             body: JSON.stringify({
-                name,
-                birth_date,
-                email,
-                address,
-                location_zip,
-                doctor_id
+                patient_id,
+                patient_name,
+                title,
+                text,
             }),
             headers: {'Content-Type': 'application/json'}
         });
@@ -32,7 +32,9 @@ async function createPatientFormHandler(event) {
             let result = await response.json()
             alert(result.message)
         }
+    } else {
+        alert("Missing Information")
     }
 }
 
-document.querySelector('#createpatient').addEventListener('click', createPatientFormHandler);
+document.querySelector('#createrecord').addEventListener('click', createPatientRecordFormHandler);

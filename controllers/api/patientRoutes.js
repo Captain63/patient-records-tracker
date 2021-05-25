@@ -57,30 +57,173 @@ router.get('/create', withAuth, (req, res) => {
       });
 })
 
-// GET /api/patients/1 -- get a single user by id
-router.get('/:id', (req, res) => {
+router.get('/:id', withAuth , async (req, res) => {
+  try {
     // Access the User model and run the findOne() method to get a single user based on parameters
-    Patient.findOne({
+    const dbPatientData = await Patient.findOne({
+      // when the data is sent back, exclude the password property
       where: {
         // use id as the parameter for the request
         id: req.params.id
       },
-    })
-      .then(dbPatientData => {
-        if (!dbPatientData) {
-          // if no user is found, return an error
-          res.status(404).json({ message: 'No patient found with this id' });
-          return;
+      order: [
+        [Record, 'created_at', 'DESC']
+      ],
+      include: [
+        {
+          model: User,
+          attributes: [
+            'id',
+            'name',
+            'username',
+            'email',
+            'password',
+            'address',
+            'location_zip',
+          ]
+        },
+        {
+          model: Record,
+          attributes: ['id', 'patient_name', 'title', 'text', 'patient_id', 'user_id', 'created_at', 'user_username' ]
         }
-        // otherwise, return the data for the requested user
-        res.json(dbPatientData);
-      })
-      .catch(err => {
-        // if there is a server error, return that error
-        console.log(err);
-        res.status(500).json(err);
-      });
-  });
+      ]
+    })
+    if (!dbPatientData) {
+      // if no user is found, return an error
+      res.status(404).json({ message: 'No Patient found with this id' });
+      // halts further code execution
+      return;
+    }
+
+    const dbUserData = await User.findOne({
+      // when the data is sent back, exclude the password property
+      where: {
+         username: req.session.username
+       },
+       attributes: [
+         'id',
+         'name',
+         'username',
+         'email',
+         'password',
+         'address',
+         'location_zip',
+       ],
+       order: [
+         [Patient, 'name', 'ASC'],
+       ],
+       include: [
+         {
+           model: Patient,
+           attributes: ['id', 'name', 'birth_date', 'email', 'address' , 'doctor_id' , 'location_zip', 'created_at']
+         },
+         {
+           model: Record,
+           attributes: ['id', 'patient_name', 'title', 'text', 'patient_id', 'user_id', 'created_at' ]
+         }
+       ]
+    })
+    
+    if (!dbUserData) {
+      // if no user is found, return an error
+      res.status(404).json({ message: 'No user found with this id' });
+      // halts further code execution
+      return;
+    }
+    
+    // otherwise, return the data for the requested user
+    const patient = dbPatientData.get({ plain: true });
+    const user = dbUserData.get({ plain: true });
+    res.render('patientdashboard', { patient, user, logged_in: true });
+  } catch (err) {
+      // if there is a server error, return that error
+      console.log(err);
+      res.status(500).json(err);
+  }
+});
+
+router.get('/:id/details', withAuth , async (req, res) => {
+  try {
+    // Access the User model and run the findOne() method to get a single user based on parameters
+    const dbPatientData = await Patient.findOne({
+      // when the data is sent back, exclude the password property
+      where: {
+        // use id as the parameter for the request
+        id: req.params.id
+      },
+      include: [
+        {
+          model: User,
+          attributes: [
+            'id',
+            'name',
+            'username',
+            'email',
+            'password',
+            'address',
+            'location_zip',
+          ]
+        },
+        {
+          model: Record,
+          attributes: ['id', 'patient_name', 'title', 'text', 'patient_id', 'user_id', 'created_at' ]
+        }
+      ]
+    })
+    if (!dbPatientData) {
+      // if no user is found, return an error
+      res.status(404).json({ message: 'No Patient found with this id' });
+      // halts further code execution
+      return;
+    }
+
+    const dbUserData = await User.findOne({
+      // when the data is sent back, exclude the password property
+      where: {
+         username: req.session.username
+       },
+       attributes: [
+         'id',
+         'name',
+         'username',
+         'email',
+         'password',
+         'address',
+         'location_zip',
+       ],
+       order: [
+         [Patient, 'name', 'ASC'],
+         [Record, 'created_at', 'DESC'],
+       ],
+       include: [
+         {
+           model: Patient,
+           attributes: ['id', 'name', 'birth_date', 'email', 'address' , 'doctor_id' , 'location_zip', 'created_at']
+         },
+         {
+           model: Record,
+           attributes: ['id', 'patient_name', 'title', 'text', 'patient_id', 'user_id', 'created_at' ]
+         }
+       ]
+    })
+    
+    if (!dbUserData) {
+      // if no user is found, return an error
+      res.status(404).json({ message: 'No user found with this id' });
+      // halts further code execution
+      return;
+    }
+    
+    // otherwise, return the data for the requested user
+    const patient = dbPatientData.get({ plain: true });
+    const user = dbUserData.get({ plain: true });
+    res.render('patientdetails', { patient, user, logged_in: true });
+  } catch (err) {
+      // if there is a server error, return that error
+      console.log(err);
+      res.status(500).json(err);
+  }
+});
 
 // POST /api/patients -- add a new user
 router.post('/', (req, res) => {

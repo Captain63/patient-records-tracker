@@ -24,15 +24,19 @@ router.get('/', withAuth, (req, res) => {
       'address',
       'location_zip',
     ],
+    order: [
+      [Patient, 'name', 'ASC'],
+      [Record, 'created_at', 'DESC'],
+    ],
     include: [
       {
         model: Patient,
-        attributes: ['id', 'name', 'birth_date', 'email', 'address' , 'doctor_id' , 'location_zip']
+        attributes: ['id', 'name', 'birth_date', 'email', 'address' , 'doctor_id' , 'location_zip', 'created_at']
       },
       {
         model: Record,
-        attributes: ['id', 'patient_name', 'title', 'text', 'patient_id', 'user_id', 'created_at' ]
-      },
+        attributes: ['id', 'patient_name', 'title', 'text', 'patient_id', 'user_id', 'created_at', 'user_username' ]
+      }
     ]
   })
     .then(dbUserData => {
@@ -41,6 +45,11 @@ router.get('/', withAuth, (req, res) => {
           res.status(404).json({ message: 'No user found with this id' });
           return;
         }
+        req.session.save(() => {
+          // declare session variables
+          req.session.user_id = dbUserData.id;
+          req.session.username = dbUserData.username;
+        });
         // otherwise, return the data for the requested user
         const user = dbUserData.get({ plain: true });
         res.render('homepage', { user, logged_in: true });
