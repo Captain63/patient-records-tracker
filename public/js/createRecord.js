@@ -1,16 +1,19 @@
 // Login form handler
-async function createRecordFormHandler(event) {
+async function createPatientRecordFormHandler(event) {
     event.preventDefault();
 
     // get the information from the login form
-    const patient_id = document.querySelector('#patientID').value.trim();
-    const patient_name = document.querySelector('#patientName').value.trim();
+
     const title = document.querySelector('#recordTitle').value.trim();
     const text = document.querySelector('#information').value.trim();
-    const user_id = document.querySelector('#userID').value.trim();
+    // get the post id from the url
+    const patient_id = window.location.toString().split('/')[
+        window.location.toString().split('/').length - 1]
+    ;
+    const patient_name = document.querySelector('#patientDisplayName').textContent;
     
     // if both fields have content
-    if (patient_id && patient_name && title&& text && user_id) {
+    if (title&& text) {
         // POST to the login route with the user information
         const response = await fetch('/api/records/', {
             method: 'post',
@@ -19,7 +22,6 @@ async function createRecordFormHandler(event) {
                 patient_name,
                 title,
                 text,
-                user_id
             }),
             headers: {'Content-Type': 'application/json'}
         });
@@ -30,7 +32,9 @@ async function createRecordFormHandler(event) {
             let result = await response.json()
             alert(result.message)
         }
-    } 
+    } else {
+        alert("Missing Information")
+    }
 }
 
-// document.querySelector('#createrecord').addEventListener('click', createRecordFormHandler);
+document.querySelector('#createrecord').addEventListener('click', createPatientRecordFormHandler);
