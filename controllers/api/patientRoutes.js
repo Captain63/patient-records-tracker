@@ -29,6 +29,9 @@ router.get('/create', withAuth, (req, res) => {
       'address',
       'location_zip',
     ],
+    order: [
+      [Patient, 'name', 'ASC'],
+    ],
     include: [
       {
         model: Patient,

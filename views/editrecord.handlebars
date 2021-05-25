@@ -1,10 +1,17 @@
 <div class="card-body bg-dark">
-	<div class="mb-3 text-white container text-center col-12">
-	<div class=" patientNameContainer container m-auto ">
-      <h3 id="patientDisplayName">{{patient.name}}</h3>
-      <h3>s Records</h3>
+	<div class="column">
+    <div class="wrapper">
+      <div class="row">
+        <div class="row mb-3 text-white text-center">
+          <h3 id="patientDisplayName">{{record.patient_name}}</h3>
+          <h3>: Record ID </h3>
+          <h3 class="ml-3" id="patientDisplayID">{{record.patient_id}}</h3>
+        </div>
+        <div class="row button-right">
+          <a class="btn btn-danger" id="deleteRecord" href="api/records/delete/{{record.id}}" role="button">Delete Record</a>
+        </div>
+      </div>
     </div>
-	</div>
 	<div class="row m-0 col-12">
 	    <div class="col-xl-12 col-lg-12 col-md-6 col-sm-6 column ">
 	        <div class="form-group ">
@@ -16,7 +23,8 @@
 		</div>
 	</div>
 	<div class="text-bottom">
-		<button type="button" id="createrecord" name="submit" class="btn btn-primary" >Create Record</button>
+		<button type="button" id="updateRecord" name="submit" class="btn btn-primary" >Create Record</button>
 	</div>
+    </div>
 </div>
 

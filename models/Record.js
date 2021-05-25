@@ -16,14 +16,6 @@ Record.init(
             primaryKey: true,
             autoIncrement: true
         },
-        patient_name: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            references: {
-                model: "patient",
-                key: "name"
-            } 
-        },
         title: {
             type: DataTypes.STRING,
             allowNull: false
