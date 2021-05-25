@@ -18,8 +18,9 @@ Record.belongsTo(Patient, {
     foreignKey: "patient_id"
 })
 
-Record.belongsTo(Patient, {
-    foreignKey: "patient_name"
+User.hasMany(Record, {
+    foreignKey: "user_username",
+    onDelete: "CASCADE"
 })
 
 // Associating User and Patient

@@ -16,14 +16,6 @@ Record.init(
             primaryKey: true,
             autoIncrement: true
         },
-        patient_name: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            references: {
-                model: "patient",
-                key: "name"
-            } 
-        },
         title: {
             type: DataTypes.STRING,
             allowNull: false
@@ -35,6 +27,22 @@ Record.init(
                 // Record must be at least one character long
                 len: [1]
             }
+        },
+        patient_name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            references: {
+                model: "patient",
+                key: "name"
+            } 
+        },
+        user_username: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            references: {
+                model: "user",
+                key: "username"
+            } 
         },
         patient_id: {
             type: DataTypes.INTEGER,
@@ -56,7 +64,6 @@ Record.init(
     {
         sequelize,
         freezeTableName: true,
-        timestamps: true,
         underscored: true,
         modelName: 'record'
     }

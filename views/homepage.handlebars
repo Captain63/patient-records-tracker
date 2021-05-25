@@ -1,14 +1,15 @@
-<div class="homeContainer">
 
-	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-10 ">
-		<div class="card ">
-			<div class="card-body bg-dark">
-				<div class="column">
-			        <h6 class="mb-3 text-primary">Recent Notes</h6>
-					{{>user-patient-record}}
-                </div>
-			</div>
-		</div>
-	</div>
-
+<div class="card-body bg-dark">
+	<div class="colum col-12">
+    	<div class="wrapper col-12">
+    	  	<div class="row">
+    	      	<h3 class="mb-3 text-white text-center">Recent Records</h3>
+    	    	<div class="button-right">
+    	    	  <a class="btn btn-primary-s" href="/api/records/create/{{patient.id}}" role="button">Create New Record</a>
+    	    	  <a class="btn btn-green " href="/api/patients/details/{{patient.id}}" role="button">Patient Details</a>
+    	    	</div>
+    	 	</div>
+    	</div>
+		{{>user-patient-record}}
+    </div>
 </div>

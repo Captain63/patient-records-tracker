@@ -1,4 +1,4 @@
-{{#each user.records as |record| }}
+{{#each patient.records as |record| }}
     <a href="/api/records/edit/{{record.id}}" class="userPatientsContainer row text-nowrap col-12 " aria-current="true">
         <div class="rowC container row">
             <h5>Record ID:</h5>
@@ -30,6 +30,5 @@
         </div>
     </a>
 {{/each}}
-
 
 

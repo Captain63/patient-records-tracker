@@ -1,5 +1,5 @@
 // Login form handler
-async function createPatientRecordFormHandler(event) {
+async function editRecordFormHandler(event) {
     event.preventDefault();
 
     // get the information from the login form
@@ -7,19 +7,16 @@ async function createPatientRecordFormHandler(event) {
     const title = document.querySelector('#recordTitle').value.trim();
     const text = document.querySelector('#information').value.trim();
     // get the post id from the url
-    const patient_id = window.location.toString().split('/')[
+    const id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1]
     ;
-    const patient_name = document.querySelector('#patientDisplayName').textContent;
-    
+
     // if both fields have content
-    if (title&& text) {
+    if (title && text) {
         // POST to the login route with the user information
-        const response = await fetch('/api/records/', {
-            method: 'post',
+        const response = await fetch(`/api/records/update/${id}`, {
+            method: 'put',
             body: JSON.stringify({
-                patient_id,
-                patient_name,
                 title,
                 text,
             }),
@@ -27,7 +24,8 @@ async function createPatientRecordFormHandler(event) {
         });
         // when the fetch promise is fulfilled, check the response status; if the response is good, load the dashboard; if there is an error, alert with the status
         if (response.ok) {
-            document.location.replace('/');
+            document.location.replace(`/api/records/edit/${id}`);
+            alert("Record has been updated!")
         } else {
             let result = await response.json()
             alert(result.message)
@@ -37,4 +35,4 @@ async function createPatientRecordFormHandler(event) {
     }
 }
 
-document.querySelector('#createrecord').addEventListener('click', createPatientRecordFormHandler);
+document.querySelector('#updateRecord').addEventListener('click', editRecordFormHandler);

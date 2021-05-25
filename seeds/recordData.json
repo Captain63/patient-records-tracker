@@ -1,85 +1,109 @@
 [
     {
+      "id":1,
       "title": "Patient Checkup",
       "text": "This patient is sick",
       "patient_id": 1,
+      "user_username": "Brandonuser",
       "patient_name": "Tom",
       "user_id":1
     },
     {
+      "id":2,
       "title": "Patient Checkup",
       "text": "This patient is healthy!",
       "patient_id": 2,
+      "user_username": "Audreyuser",
       "patient_name": "Juliet",
       "user_id":2
     },
     {
+      "id":3,
       "title": "Patient Checkup",
       "text": "This patient needs flu shots",
       "patient_id": 3,
+      "user_username": "Romeouser",
       "patient_name": "Susie",
       "user_id":3
     },
     {
+      "id":4,
       "title": "Patient Checkup",
       "text": "This patient has a broken bone",
       "patient_id": 4,
+      "user_username": "Brandonuser",
       "patient_name": "Roger",
       "user_id":1
     },
     {
+      "id":5,
       "title": "Patient Checkup",
       "text": "This patient is needs the flu shot ",
       "patient_id": 5,
+      "user_username": "Audreyuser",
       "patient_name": "Ashley",
       "user_id":2
     },
     {
+      "id":6,
       "title": "Patient Checkup",
       "text": "This patient is healthy!",
       "patient_id": 6,
+      "user_username": "Romeouser",
       "patient_name": "Colbie",
       "user_id":3
     },
     {
+      "id":7,
       "title": "Patient Height",
       "text": "5'1",
       "patient_id": 1,
+      "user_username": "Brandonuser",
       "patient_name": "Tom",
       "user_id":1
     },
     {
+      "id":8,
       "title": "Patient Height",
       "text": "4'6",
       "patient_id": 2,
+      "user_username": "Audreyuser",
       "patient_name": "Juliet",
       "user_id":2
     },
     {
+      "id":9,
       "title": "Patient Height",
       "text": "5'5",
       "patient_id": 3,
+      "user_username": "Romeouser",
       "patient_name": "Susie",
       "user_id":3
     },
     {
+      "id":10,
       "title": "Patient Height",
       "text": "9'6",
       "patient_id": 4,
+      "user_username": "Brandonuser",
       "patient_name": "Roger",
       "user_id":1
     },
     {
+      "id":11,
       "title": "Patient Height",
       "text": "2'6",
       "patient_id": 5,
+      "user_username": "Audreyuser",
       "patient_name": "Ashley",
       "user_id":2
     },
     {
+      "id":12,
       "title": "Patient Height",
       "text": "5'3",
       "patient_id": 6,
+      "user_username": "Romeouser",
       "patient_name": "Colbie",
       "user_id":3
     }
