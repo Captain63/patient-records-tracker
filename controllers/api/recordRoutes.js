@@ -16,137 +16,75 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 
 // A route to render the dashboard page, only for a logged in user
-router.get('/create', withAuth, (req, res) => {
-  // Access the User model and run the findOne() method to get a single user based on parameters
-  User.findOne({
-    // when the data is sent back, exclude the password property
-    where: {
-      username: req.session.username
-    },
-    attributes: [
-      'id',
-      'name',
-      'username',
-      'email',
-      'password',
-      'address',
-      'location_zip',
-    ],
-    include: [
-      {
-        model: Patient,
-        attributes: ['id', 'name', 'birth_date', 'email', 'address' , 'doctor_id' , 'location_zip']
+router.get('/create', withAuth, async (req, res) => {
+  try {
+    // Access the User model and run the findOne() method to get a single user based on parameters
+    const dbUserData = await User.findOne({
+      // when the data is sent back, exclude the password property
+      where: {
+        username: req.session.username
       },
-      {
-        model: Record,
-        attributes: ['id', 'patient_name', 'title', 'text', 'patient_id', 'user_id', 'created_at' ]
-      },
-    ]
-  })
-    .then(dbUserData => {
-        if (!dbUserData) {
-          // if no user is found, return an error
-          res.status(404).json({ message: 'No user found with this id' });
-          return;
-        }
-        // otherwise, return the data for the requested user
-        const user = dbUserData.get({ plain: true });
-        res.render('createrecord', { user, logged_in: true });
-      })
-      .catch(err => {
-        // if there is a server error, return that error
-        console.log(err);
-        res.status(500).json(err);
-      });
+      attributes: [
+        'id',
+        'name',
+        'username',
+        'email',
+        'password',
+        'address',
+        'location_zip',
+      ],
+      include: [
+        {
+          model: Patient,
+          attributes: ['id', 'name', 'birth_date', 'email', 'address' , 'doctor_id' , 'location_zip']
+        },
+        {
+          model: Record,
+          attributes: ['id', 'patient_name', 'title', 'text', 'patient_id', 'user_id', 'created_at' ]
+        },
+      ]
+    })
+    
+    if (!dbUserData) {
+      // if no user is found, return an error
+      res.status(404).json({ message: 'No user found with this id' });
+      return;
+    }
+          
+    // otherwise, return the data for the requested user
+    const user = dbUserData.get({ plain: true });
+    res.render('createrecord', { user, logged_in: true });
+  } catch(err) {
+    // if there is a server error, return that error
+    console.log(err);
+    res.status(500).json(err);
+  }
 })
+
 // create new record
-router.post('/', withAuth, (req, res) => {
-  // expects object of the form {title: 'Sample Title Here', post_text: 'Here's some sample text for a post.', user_id: 1}
-  Record.create({
-      patient_name: req.body.patient_name,
-      patient_id: req.body.patient_id,
-      title: req.body.title,
-      text: req.body.text,
-      user_id: req.body.user_id
-  })
-  .then(dbRecordData => res.json(dbRecordData))
-  .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-  });
+router.post('/', withAuth, async (req, res) => {
+  try {
+    // expects object of the form {title: 'Sample Title Here', post_text: 'Here's some sample text for a post.', user_id: 1}
+    const dbRecordData = await Record.create({
+        patient_name: req.body.patient_name,
+        patient_id: req.body.patient_id,
+        title: req.body.title,
+        text: req.body.text,
+        user_id: req.body.user_id
+    })
+  
+    res.json(dbRecordData);
+  } catch(err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
-// // GET /api/users -- get all records
-// router.get('/', (req, res) => {
-//     Record.findAll({
-//         // Query configuration
-//         attributes: [
-//             'id',
-//             'title',
-//             'text',
-//             'created_at',
-//           ],
-//         // Order the posts from most recent to least
-//         order: [[ 'created_at', 'DESC']],
-//         // From the User table, include the post creator's user name
-//         // From the Comment table, include all comments
-//         include: [
-//             {
-//                 model: Patient,
-//                 attributes: ['name','birth_date']
-//             }
-//         ]
-//     })
-//     // return the posts
-//     .then(dbRecordData => res.json(dbRecordData))
-//     // if there was a server error, return the error
-//     .catch(err => {
-//         console.log(err);
-//         res.status(500).json(err);
-//     });
-// });
-
-// GET /api/patients/1 -- get a single record by id
-// router.get('/:id', (req, res) => {
-//     // Access the User model and run the findOne() method to get a single user based on parameters
-//     Record.findOne({
-//       where: {
-//         // use id as the parameter for the request
-//         id: req.params.id
-//       },
-//       attributes: [
-//         'id',
-//         'title',
-//         'text',
-//         'created_at',
-//       ],
-//       include: [
-//         {
-//             model: Patient,
-//             attributes: ['name','birth_date']
-//         }
-//     ]
-//     })
-//       .then(dbRecordData => {
-//         if (!dbRecordData) {
-//           // if no user is found, return an error
-//           res.status(404).json({ message: 'No Record found with this id' });
-//           return;
-//         }
-//         // otherwise, return the data for the requested user
-//         res.json(dbRecordData);
-//       })
-//       .catch(err => {
-//         // if there is a server error, return that error
-//         console.log(err);
-//         res.status(500).json(err);
-//       });
-//   });
-
 // GET /api/patients/1 -- get all records from that patient
-router.get('/:patient_id', (req, res) => {
+router.get('/:patient_id', async (req, res) => {
+  try {
     // Access the User model and run the findOne() method to get a single user based on parameters
-    Record.findAll({
+    const dbRecordData = Record.findAll({
       where: {
         // use id as the parameter for the request
         patient_id: req.params.patient_id
@@ -162,37 +100,40 @@ router.get('/:patient_id', (req, res) => {
             model: Patient,
             attributes: ['name','birth_date']
         }
-    ]
+      ]
     })
-      .then(dbRecordData => {
-        if (!dbRecordData) {
-          // if no user is found, return an error
-          res.status(404).json({ message: 'No Record found with this id' });
-          return;
-        }
-        // otherwise, return the data for the requested user
-        res.json(dbRecordData);
-      })
-      .catch(err => {
-        // if there is a server error, return that error
-        console.log(err);
-        res.status(500).json(err);
-      });
-  });
+
+      
+    if (!dbRecordData) {
+      // if no user is found, return an error
+      res.status(404).json({ message: 'No Record found with this id' });
+      return;
+    }
+
+    // otherwise, return the data for the requested user
+    res.json(dbRecordData);
+  } catch(err) {
+    // if there is a server error, return that error
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 
 // POST api/posts -- create a record post
-router.post('/', withAuth, (req, res) => {
+router.post('/', withAuth, async (req, res) => {
+  try {
     // expects object of the form {title: 'Sample Title Here', post_text: 'Here's some sample text for a post.', user_id: 1}
-    Record.create({
+    const dbRecordData = await Record.create({
         title: req.body.title,
         text: req.body.text,
         id: req.session.id
     })
-    .then(dbRecordData => res.json(dbRecordData))
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+
+    res.json(dbRecordData);
+  } catch(err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 
