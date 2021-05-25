@@ -51,17 +51,11 @@
           </div>
           <!-- Nav Item - Pages Collapse Menu -->
           {{>patient-name}}
-          <!-- Divider -->
-          <hr class="sidebar-divider d-none d-md-block">
-          <!-- Sidebar Toggler (Sidebar) -->
-          <div class="text-center d-none d-md-inline">
-              <button class="rounded-circle border-0" id="sidebarToggle"></button>
-          </div>
       </ul>
 
-      <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content-wrapper" class="d-flex flex-column bg-grey">
 
-        <div id="content">
+        
 
           <nav class="navbar navbar-expand navbar-light bg-grey topbar static-top shadow">
             <!-- Sidebar Toggle (Topbar) -->
@@ -85,26 +79,27 @@
             <!-- Topbar Navbar -->
             <ul class="navbar-nav">
               <!-- Nav Item - User Information -->
-              <li class="nav-item active">
-                  <a class="nav-link m-lc draw meet text-dark">Welcome {{user.username}}!</a>
+              <li class="nav-item active row">
+                  <a class="nav-link m-lc draw meet text-dark">Welcome</a>
+                       <a class="nav-link m-lc draw meet text-green userDisplay">{{user.username}}!</a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link m-lc draw meet" href="/settings/{{user.id}}">Settings <span class="sr-only">(current)</span></a>
+                <a class="nav-link m-lc text-dark draw meet" href="/settings/{{user.id}}">Settings <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link p-font-color m-lc mr-2 text-gray-400" href="#logout" id="logout">Logout</a>
+                <a class="nav-link p-font-color m-lc mr-2 text-dark" href="#logout" id="logout">Logout</a>
               </li>
             </ul>
           </nav>
           {{/if}}
-            <main class="text-center bg-grey">
+            <main class="text-center sbg-grey">
               {{{ body }}}
             </main>
            {{#if logged_in}}
-             <footer class="text-center bottom bg-dark text-white">
+             <footer class="text-center  bg-dark text-white">
                Thanks for visiting!
              </footer>
-        </div>
+        
       </div>
       {{/if}}
   </div>
