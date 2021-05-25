@@ -1,14 +1,14 @@
 <div class="card-body bg-dark">
-	<div class="column">
-    <div class="wrapper">
-      <div class="row">
+	<div class="colum col-12">
+    <div class="wrapper col-12">
+      <div class="row ">
         <div class="row">
           <h3 class="mb-3 text-white text-center">{{patient.name}}</h3>
           <h3>s Records</h3>
         </div>
-        <div class="row button-right">
-          <a class="btn btn-success " href="/api/records/create/{{patient.id}}" role="button">Create New Record</a>
-          <a class="btn btn-success " href="/api/patients/{{patient.id}}/details" role="button">Patient Details</a>
+        <div class="button-right">
+          <a class="btn btn-primary-s" href="/api/records/create/{{patient.id}}" role="button">Create New Record</a>
+          <a class="btn btn-green " href="/api/patients/details/{{patient.id}}" role="button">Patient Details</a>
         </div>
       </div>
     </div>

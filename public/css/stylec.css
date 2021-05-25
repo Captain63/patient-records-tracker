@@ -24,7 +24,7 @@
   --white: #fff;
   --gray: #858796;
   --gray-dark: #5a5c69;
-  --primary: #4e73df;
+  --primary: #6579b3;
   --secondary: #858796;
   --success: #1cc88a;
   --info: #36b9cc;
@@ -56,9 +56,52 @@
   text-align: center;
 }
 html {
-background-color: #b5b7c4 
+background-color: #343a40 !important; 
+}
+.btn-primary {
+  background-color: rgb(114, 233, 187) !important;
+  border: solid black 1px !important;
+  color: #000 !important; 
+  font-size: 30px !important;
+}
+.btn-primary-s {
+  background-color: rgb(114, 233, 187) !important;
+  border: solid black 1px !important;
+  color: #000 !important; 
+  font-size: 16px !important;
+}
+.btn-danger-s {
+  background-color: rgb(233, 114, 114) !important;
+  border: solid black 1px !important;
+  color: #000 !important; 
+  font-size: 16px !important;
+}
+.btn-primary:hover {
+  box-shadow: 0px 0px 20px  black !important;
+}
+.btn-primary:active {
+  box-shadow: 0 !important;
+  outline: 0 !important;
+  border: none !important;
+}
+.btn-green {
+  background-color: rgb(85, 171, 211) !important;
+  border: solid black 1px !important;
+  color: #000 !important;
+  font-size: 16px !important;
 }
 
+
+.searchInput {
+  height: 33px !important;
+  font-size: 20px !important;
+  margin:  0 !important;
+}
+
+.btn {
+  height: 100% !important;
+
+}
 .account-settings .user-profile .user-avatar {
   margin: 0 0 1rem 0;
 }
@@ -130,10 +173,15 @@ font-size: 30px;
 }
 .detialsLables {
 font-size: 40px;
-margin: 0 100px;
+margin: 0 30%;
 }
 .detialsLables input {
 width: 100% !important;
+color: green !important;
+}
+::placeholder {
+  color: rgb(83, 83, 83);
+  font-size: 20px;
 }
 
 @media (max-width: 1822px) {
@@ -156,7 +204,7 @@ margin-right: 40px !important;
 font-size: 20px !important
 }
 .text-green {
-color: green !important;
+color: rgb(150, 223, 150) !important;
 }
 .userPatientsContainer {
 background-color: rgb(214, 214, 214);
@@ -170,7 +218,14 @@ border-radius: 10px;
 .button-right {
   position: absolute;
   right:1%;
-  border-radius: 10px !important;
+  border-radius: 15px !important;
+}
+
+#searchBtn {
+  height: 100% !important;
+}
+.button-right a:hover {
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.616) !important;
 }
 .homeContainer {
 height: 100%;
@@ -180,7 +235,7 @@ height: 100%;
 height: 100%;
 }
 
-
+btn
 .contact{
 padding: 4%;
 height: 400px;
@@ -236,7 +291,9 @@ white-space: nowrap;
 
 .sidebar {
 width: 500px !important;
+height: 100% !important;
 }
+
 .sidebar-brand-text {
 font-size: 28px;
 }
@@ -306,18 +363,30 @@ border-radius: 5px;
 border: none !important;
 height: 100% !important;
 }
+nav-bar {
+  padding-left: 0 !important;
+}
+
 main {
 height: 100% !important;
 /* margin-top: 10px;
 margin-left: 10px; */
 margin:10px;
-background-color: #b5b7c4 ;
+background-color: #343a40 !important ;
+border-radius: 100px !important;
 }
 
+button-right{
+  width: 300px !important;
+}
+.detialBtn:hover {
+  box-shadow: 0px 0px 10px black !important;
+  background-color: blue !important;
+}
 
 #content-wrapper {
 height: auto !important;
-background-color: #b5b7c4 !important ;
+background-color: #5a5c69 !important ;
 }
 
 .card-body {
@@ -327,6 +396,22 @@ position: relative !important;
 padding:0 !important;
 border: solid 6px #1cc88a !important;
 border-radius: 30px !important;
+}
+
+footer {
+
+height: 40px !important;
+font-size: 20px;
+width: 500px !important;
+margin: 0 !important;
+color: rgb(119, 197, 119) !important;
+}
+
+.wrapperCu {
+  height: 100% !important;
+}
+.cannotChange {
+  font-size: 15px !important;
 
 }
 .text-bottom {
@@ -344,6 +429,12 @@ border-bottom-left-radius: 23px;
 border-bottom-right-radius: 23px;
 }
 #createrecord {
+  height: 100% !important;
+  width: 100% !important;
+  border-bottom-left-radius: 23px;
+  border-bottom-right-radius: 23px;
+}
+#updateRecord {
   height: 100% !important;
   width: 100% !important;
   border-bottom-left-radius: 23px;
@@ -10296,7 +10387,14 @@ a:focus {
   background-image: linear-gradient(180deg, #5a5c69 10%, #373840 100%);
   background-size: cover;
 }
-
+.bg-gradient-dark-o {
+  background-color: #5a5c69;
+  background-image: linear-gradient(180deg, #50515c 10%, #5a5c69 100%);
+  background-size: cover;
+}
+.bg-dark-c {
+  background-color: #50515c;
+}
 .bg-gray-100 {
   background-color: #f8f9fc !important;
 }

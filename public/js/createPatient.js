@@ -1,6 +1,6 @@
 // Login form handler
 async function createPatientRecordFormHandler(event) {
- 
+    event.preventDefault();
 
     // get the information from the login form
 

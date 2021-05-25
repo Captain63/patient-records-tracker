@@ -145,7 +145,7 @@ router.get('/:id', withAuth , async (req, res) => {
   }
 });
 
-router.get('/:id/details', withAuth , async (req, res) => {
+router.get('/details/:id/', withAuth , async (req, res) => {
   try {
     // Access the User model and run the findOne() method to get a single user based on parameters
     const dbPatientData = await Patient.findOne({
@@ -261,7 +261,7 @@ router.post('/', (req, res) => {
 });
 
 // PUT /api/patients/1 -- update an existing user
-router.put('/:id', (req, res) => {
+router.put('/update/:id', (req, res) => {
     // update method
 
     // if req.body has exact key/value pairs to match the model, 
@@ -289,7 +289,7 @@ router.put('/:id', (req, res) => {
 })
 
 // DELETE /api/users/1 -- delete an existing user
-router.delete('/:id', withAuth, (req, res) => {
+router.delete('/delete/:id', withAuth, (req, res) => {
     // destroy method
     Patient.destroy({
       where: {

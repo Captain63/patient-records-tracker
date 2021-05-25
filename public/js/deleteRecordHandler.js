@@ -1,6 +1,5 @@
 // A function to delete a record
 async function deleteRecordHandler(event) {
-    event.preventDefault();
 
     // get the post id from the url
     const id = window.location.toString().split('/')[

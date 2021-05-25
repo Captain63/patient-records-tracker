@@ -137,7 +137,7 @@ router.post('/logout', withAuth, (req, res) => {
 });
 
 // PUT /api/users/1 -- update an existing user
-router.put('/:id', withAuth, async (req, res) => {
+router.put('/update/:id', withAuth, async (req, res) => {
     try {
       // update method
       // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
@@ -165,6 +165,29 @@ router.put('/:id', withAuth, async (req, res) => {
       res.status(500).json(err);
     }
 })
+
+// PUT api/record/1-- update a post's title or text
+router.put('/update/:id', withAuth, (req, res) => {
+  User.update(req.body,
+      {
+          where: {
+              id: req.session.id
+          }
+      }
+  )
+  .then(dbRecordData => {
+    if (!dbRecordData) {
+      res.status(404).json({ message: 'No record found with this id' });
+      return;
+    } 
+    res.json(dbRecordData);
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+});
+
 
 // DELETE /api/users/1 -- delete an existing user
 router.delete('/:id', withAuth, async (req, res) => {

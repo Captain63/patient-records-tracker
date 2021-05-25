@@ -1,6 +1,6 @@
 // Login form handler
 async function editRecordFormHandler(event) {
- 
+    event.preventDefault();
 
     // get the information from the login form
 

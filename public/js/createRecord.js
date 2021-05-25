@@ -1,6 +1,6 @@
 // Login form handler
 async function createRecordFormHandler(event) {
- 
+    event.preventDefault();
 
     // get the information from the login form
     const patient_id = document.querySelector('#patientID').value.trim();
