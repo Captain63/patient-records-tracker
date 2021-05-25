@@ -1,32 +1,32 @@
 {{#each user.records as |record| }}
     <a href="/api/records/edit/{{record.id}}" class="userPatientsContainer row text-nowrap col-12 " aria-current="true">
-        <div class="rowC col-1 row">
-            <h4>Record ID:</h4>
-            <h4> {{record.id}}</h4>
+        <div class="rowC container row">
+            <h5>Record ID:</h5>
+            <h5> {{record.id}}</h5>
         </div>
-        <div class="rowC col-2 row">
-            <h4>Created On:</h4>
-            <h4> {{format_date record.created_at}}</h4>
+        <div class="rowC container row">
+            <h5>Created On:</h4>
+            <h5> {{format_date record.created_at}}</h5>
         </div>
-        <div class="rowC col-1 row">
-            <h4>Doctor ID:</h4>
-            <h4> {{record.user_id}}</h4>
+        <div class="rowC container row">
+            <h5>Doctor ID:</h4>
+            <h5> {{record.user_id}}</h5>
         </div>
-        <div class="rowC col-2 row">
-            <h4> Doctor Name:</h4>
-            <h4> {{record.user_username}}</h4>
+        <div class="rowC container  row">
+            <h5> Doctor Name:</h4>
+            <h5> {{record.user_username}}</h5>
         </div>
-        <div class="rowC col-2 row">
-            <h4>Patient ID:</h4>
-            <h4> {{record.patient_id}}</h4>
+        <div class="rowC container  row">
+            <h5>Patient ID:</h4>
+            <h5> {{record.patient_id}}</h5>
         </div>
-        <div class="rowC col-2 row">
-            <h4>Patient Name:</h4>
-            <h4> {{record.patient_name}}</h4>
+        <div class="rowC container  row">
+            <h5>Patient Name:</h5>
+            <h5> {{record.patient_name}}</h5>
         </div>
-        <div class="rowC col-2 row">
-            <h4> Record Subject:</h4>
-            <h4> {{record.title}}</h4>
+        <div class="rowC container  row">
+            <h5> Record Subject:</h5>
+            <h5> {{record.title}}</h5>
         </div>
     </a>
 {{/each}}
