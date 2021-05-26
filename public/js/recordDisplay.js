@@ -29,40 +29,48 @@ document.querySelector('#recordDisplay').addEventListener('submit', recordDispla
 const searchBar = document.querySelector("#search-bar");
 
 // Creates array of all searchable fields from patient records
-const searchNames = Array.from(document.querySelectorAll(".search.name"));
+const searchArray = Array.from(document.querySelectorAll(".userPatientsContainer"));
 
-// Adds a new property .textValue to each item that's lower case for easy comparison with search query
-searchNames.forEach(item => {
-    item.textValue = item.textContent.toLowerCase();
-})
+console.log(searchArray);
 
+for (let i = 0; i < searchArray.length; i++) {
+    searchArray[i].strings = [];
+    for (let j = 0; j < searchArray[i].children.length; j++) {
+        const string = searchArray[i].children[j].innerText.toLowerCase();
+        searchArray[i].strings.push(string);
+    }
+    searchArray[i].searchString = searchArray[i].strings.join(" ");
+}
 
-const search = (event) => {
+console.log(searchArray);
+
+const searchQuery = (event) => {
+
     // Captures string entered into input
     const query = event.target.value.toLowerCase();
 
-    // Finds list items that match
-    const matchArray = searchNames.filter(item => item.textValue.includes(query));
+    // Finds list items that DON'T match
+    // Swap to textValue property if doing the simple example
+    const matchArray = searchArray.filter(item => item.searchString.includes(query));
 
     // Finds list items that DON'T match
-    const noMatchArray = searchNames.filter(item => !item.textValue.includes(query));
+    const noMatchArray = searchArray.filter(item => !item.searchString.includes(query));
 
-    console.log(matchArray);
-    console.log(noMatchArray);
+    // console.log(matchArray);
+    // console.log(noMatchArray);
 
-    // Displays those that do match -- has opposite class to 
+    // Displays those that do match
     matchArray.forEach(item => {
-        // References container for each search item
-        item.closest(".userPatientsContainer").classList.add("show");
-        item.closest(".userPatientsContainer").classList.remove("hide");
+        item.classList.add("show");
+        item.classList.remove("hide");
     })
 
     // Hides those that don't match
     noMatchArray.forEach(item => {
-        item.closest(".userPatientsContainer").classList.add("hide");
-        item.closest(".userPatientsContainer").classList.remove("show");
+        item.classList.add("hide");
+        item.classList.remove("show");
     })
 }
 
-// Attach search function to searchBar as event listener for each key press
-searchBar.addEventListener("keyup", search);
+// Assigns event listener each time key is entered into input
+searchBar.addEventListener("keyup", searchQuery);
