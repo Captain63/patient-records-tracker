@@ -22,3 +22,55 @@ async function recordDisplayFormHandler(event) {
 }
 
 document.querySelector('#recordDisplay').addEventListener('submit', recordDisplayFormHandler);
+
+// Search bar logic
+
+// Tag search bar
+const searchBar = document.querySelector("#search-bar");
+
+// Creates array of all searchable fields from patient records
+const searchArray = Array.from(document.querySelectorAll(".userPatientsContainer"));
+
+console.log(searchArray);
+
+for (let i = 0; i < searchArray.length; i++) {
+    searchArray[i].strings = [];
+    for (let j = 0; j < searchArray[i].children.length; j++) {
+        const string = searchArray[i].children[j].innerText.toLowerCase();
+        searchArray[i].strings.push(string);
+    }
+    searchArray[i].searchString = searchArray[i].strings.join(" ");
+}
+
+console.log(searchArray);
+
+const searchQuery = (event) => {
+
+    // Captures string entered into input
+    const query = event.target.value.toLowerCase();
+
+    // Finds list items that DON'T match
+    // Swap to textValue property if doing the simple example
+    const matchArray = searchArray.filter(item => item.searchString.includes(query));
+
+    // Finds list items that DON'T match
+    const noMatchArray = searchArray.filter(item => !item.searchString.includes(query));
+
+    // console.log(matchArray);
+    // console.log(noMatchArray);
+
+    // Displays those that do match
+    matchArray.forEach(item => {
+        item.classList.add("show");
+        item.classList.remove("hide");
+    })
+
+    // Hides those that don't match
+    noMatchArray.forEach(item => {
+        item.classList.add("hide");
+        item.classList.remove("show");
+    })
+}
+
+// Assigns event listener each time key is entered into input
+searchBar.addEventListener("keyup", searchQuery);
