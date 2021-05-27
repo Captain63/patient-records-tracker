@@ -39,7 +39,7 @@ router.get('/create', withAuth, (req, res) => {
       },
       {
         model: Record,
-        attributes: ['id', 'patient_name', 'title', 'text', 'patient_id', 'user_id', 'created_at' ]
+        attributes: ['id', 'patient_name', 'title', 'text', 'patient_id', 'user_id', 'created_at', 'user_name'  ]
       },
     ]
   })
@@ -87,7 +87,7 @@ router.get('/:id', withAuth , async (req, res) => {
         },
         {
           model: Record,
-          attributes: ['id', 'patient_name', 'title', 'text', 'patient_id', 'user_id', 'created_at', 'user_username' ]
+          attributes: ['id', 'patient_name', 'title', 'text', 'patient_id', 'user_id', 'created_at', 'user_username' , 'user_name' ]
         }
       ]
     })
@@ -122,7 +122,7 @@ router.get('/:id', withAuth , async (req, res) => {
          },
          {
            model: Record,
-           attributes: ['id', 'patient_name', 'title', 'text', 'patient_id', 'user_id', 'created_at' ]
+           attributes: ['id', 'patient_name', 'title', 'text', 'patient_id', 'user_id', 'created_at', 'user_name'  ]
          }
        ]
     })
@@ -169,7 +169,7 @@ router.get('/details/:id/', withAuth , async (req, res) => {
         },
         {
           model: Record,
-          attributes: ['id', 'patient_name', 'title', 'text', 'patient_id', 'user_id', 'created_at' ]
+          attributes: ['id', 'patient_name', 'title', 'text', 'patient_id', 'user_id', 'created_at', 'user_name'  ]
         }
       ]
     })
@@ -205,7 +205,7 @@ router.get('/details/:id/', withAuth , async (req, res) => {
          },
          {
            model: Record,
-           attributes: ['id', 'patient_name', 'title', 'text', 'patient_id', 'user_id', 'created_at' ]
+           attributes: ['id', 'patient_name', 'title', 'text', 'patient_id', 'user_id', 'created_at', 'user_name'  ]
          }
        ]
     })
@@ -236,23 +236,13 @@ router.post('/', (req, res) => {
     birth_date: req.body.birth_date,
     email: req.body.email,
     address: req.body.address,
-    location_zip: req.body.location_zip,
-    doctor_id: req.body.doctor_id
+    location_zip: req.session.location_zip,
+    doctor_id: req.session.user_id
    
   })
     // send the patient data back to the client as confirmation and save the session
-    .then(dbPatientData => {
-      req.session.save(() => {
-        req.session.name = dbPatientData.name;
-        req.session.birth_date = dbPatientData.birth_date;
-        req.session.email = dbPatientData.email;
-        req.session.address = dbPatientData.address;
-        req.session.location_zip = dbPatientData.location_zip;
-        req.session.doctor_id = dbPatientData.doctor_id ;
-    
-        res.json(dbPatientData);
-      });
-    })
+    .then(dbPatientData => {res.json(dbPatientData)})
+
     // if there is a server error, return that error
     .catch(err => {
       console.log(err);

@@ -39,7 +39,7 @@ router.get('/create', withAuth, (req, res) => {
       },
       {
         model: Record,
-        attributes: ['id', 'patient_name', 'title', 'text', 'patient_id', 'user_id', 'created_at', 'user_username' ]
+        attributes: ['id', 'patient_name', 'title', 'text', 'patient_id', 'user_id', 'created_at', 'user_username' , 'user_name'  ]
       },
     ]
   })
@@ -69,7 +69,8 @@ router.post('/', withAuth, (req, res) => {
       title: req.body.title,
       text: req.body.text,
       user_id: req.session.user_id,
-      user_username: req.session.username
+      user_username: req.session.username,
+      user_name: req.session.name
   })
   .then(dbRecordData => res.json(dbRecordData))
   .catch(err => {
@@ -102,7 +103,7 @@ router.get('/create/:id', withAuth , async (req, res) => {
         },
         {
           model: Record,
-          attributes: ['id', 'patient_name', 'title', 'text', 'patient_id', 'user_id', 'created_at' ]
+          attributes: ['id', 'patient_name', 'title', 'text', 'patient_id', 'user_id', 'created_at', 'user_name'  ]
         }
       ]
     })
@@ -138,7 +139,7 @@ router.get('/create/:id', withAuth , async (req, res) => {
          },
          {
            model: Record,
-           attributes: ['id', 'patient_name', 'title', 'text', 'patient_id', 'user_id', 'created_at' ]
+           attributes: ['id', 'patient_name', 'title', 'text', 'patient_id', 'user_id', 'created_at' , 'user_name' ]
          }
        ]
     })
@@ -181,6 +182,7 @@ router.get('/edit/:id', withAuth , async (req, res) => {
         'user_id',
         'created_at',
         'user_username',
+        'user_name' ,
       ],
       include: [
         {
@@ -231,7 +233,7 @@ router.get('/edit/:id', withAuth , async (req, res) => {
          },
          {
            model: Record,
-           attributes: ['id', 'patient_name', 'title', 'text', 'patient_id', 'user_id', 'created_at' ]
+           attributes: ['id', 'patient_name', 'title', 'text', 'patient_id', 'user_id', 'created_at', 'user_name'  ]
          }
        ]
     })

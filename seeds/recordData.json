@@ -5,6 +5,7 @@
       "text": "This patient is sick",
       "patient_id": 1,
       "user_username": "Brandonuser",
+      "user_name": "Brandon",
       "patient_name": "Tom",
       "user_id":1
     },
@@ -14,6 +15,7 @@
       "text": "This patient is healthy!",
       "patient_id": 2,
       "user_username": "Audreyuser",
+      "user_name": "Audrey",
       "patient_name": "Juliet",
       "user_id":2
     },
@@ -23,6 +25,7 @@
       "text": "This patient needs flu shots",
       "patient_id": 3,
       "user_username": "Romeouser",
+      "user_name": "Romeo",
       "patient_name": "Susie",
       "user_id":3
     },
@@ -32,6 +35,7 @@
       "text": "This patient has a broken bone",
       "patient_id": 4,
       "user_username": "Brandonuser",
+      "user_name": "Brandon",
       "patient_name": "Roger",
       "user_id":1
     },
@@ -41,6 +45,7 @@
       "text": "This patient is needs the flu shot ",
       "patient_id": 5,
       "user_username": "Audreyuser",
+      "user_name": "Audrey",
       "patient_name": "Ashley",
       "user_id":2
     },
@@ -50,6 +55,7 @@
       "text": "This patient is healthy!",
       "patient_id": 6,
       "user_username": "Romeouser",
+      "user_name": "Romeo",
       "patient_name": "Colbie",
       "user_id":3
     },
@@ -59,6 +65,7 @@
       "text": "5'1",
       "patient_id": 1,
       "user_username": "Brandonuser",
+      "user_name": "Brandon",
       "patient_name": "Tom",
       "user_id":1
     },
@@ -68,6 +75,7 @@
       "text": "4'6",
       "patient_id": 2,
       "user_username": "Audreyuser",
+      "user_name": "Audrey",
       "patient_name": "Juliet",
       "user_id":2
     },
@@ -77,6 +85,7 @@
       "text": "5'5",
       "patient_id": 3,
       "user_username": "Romeouser",
+      "user_name": "Romeo",
       "patient_name": "Susie",
       "user_id":3
     },
@@ -86,6 +95,7 @@
       "text": "9'6",
       "patient_id": 4,
       "user_username": "Brandonuser",
+      "user_name": "Brandon",
       "patient_name": "Roger",
       "user_id":1
     },
@@ -95,6 +105,7 @@
       "text": "2'6",
       "patient_id": 5,
       "user_username": "Audreyuser",
+      "user_name": "Audrey",
       "patient_name": "Ashley",
       "user_id":2
     },
@@ -104,6 +115,7 @@
       "text": "5'3",
       "patient_id": 6,
       "user_username": "Romeouser",
+      "user_name": "Romeo",
       "patient_name": "Colbie",
       "user_id":3
     }

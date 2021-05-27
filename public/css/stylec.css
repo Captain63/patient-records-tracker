@@ -55,42 +55,48 @@
   padding-bottom: 1rem;
   text-align: center;
 }
+
 html {
 background-color: #343a40 !important; 
 }
+
 .btn-primary {
   background-color: rgb(114, 233, 187) !important;
   border: solid black 1px !important;
   color: #000 !important; 
   font-size: 30px !important;
 }
+
 .btn-primary-s {
   background-color: rgb(114, 233, 187) !important;
   border: solid black 1px !important;
   color: #000 !important; 
   font-size: 16px !important;
 }
+
 .btn-danger-s {
   background-color: rgb(233, 114, 114) !important;
   border: solid black 1px !important;
   color: #000 !important; 
   font-size: 16px !important;
 }
+
 .btn-primary:hover {
   box-shadow: 0px 0px 20px  black !important;
 }
+
 .btn-primary:active {
   box-shadow: 0 !important;
   outline: 0 !important;
   border: none !important;
 }
+
 .btn-green {
   background-color: rgb(85, 171, 211) !important;
   border: solid black 1px !important;
   color: #000 !important;
   font-size: 16px !important;
 }
-
 
 .searchInput {
   height: 33px !important;
@@ -102,9 +108,11 @@ background-color: #343a40 !important;
   height: 100% !important;
 
 }
+
 .account-settings .user-profile .user-avatar {
   margin: 0 0 1rem 0;
 }
+
 .account-settings .user-profile .user-avatar img {
   width: 90px;
   height: 90px;
@@ -112,9 +120,11 @@ background-color: #343a40 !important;
   -moz-border-radius: 100px;
   border-radius: 100px;
 }
+
 .account-settings .user-profile h5.user-name {
   margin: 0 0 0.5rem 0;
 }
+
 .account-settings .user-profile h6.user-email {
   margin: 0;
   font-size: 0.8rem;
@@ -147,9 +157,6 @@ background-color: #343a40 !important;
 margin-right: 0px !important;
 }
 
-
-
-
 .containerC {
 width: 80% !important;
 }
@@ -157,14 +164,17 @@ width: 80% !important;
 .detailT {
 font-size: 30px;
 }
+
 .detialsLables {
 font-size: 40px;
 margin: 0 30%;
 }
+
 .detialsLables input {
 width: 100% !important;
 color: green !important;
 }
+
 ::placeholder {
   color: rgb(83, 83, 83);
   font-size: 20px;
@@ -195,16 +205,25 @@ color: rgb(150, 223, 150) !important;
 
 .button-right {
   position: absolute;
-  right:1%;
+  right:3%;
+  border-radius: 15px !important;
+}
+
+.button-left {
+  position: absolute;
+  left:3%;
+  top:35%;
   border-radius: 15px !important;
 }
 
 #searchBtn {
   height: 100% !important;
 }
+
 .button-right a:hover {
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.616) !important;
 }
+
 .homeContainer {
 height: 100%;
 }
@@ -252,8 +271,12 @@ width: 25%;
 box-shadow:none;
 }
 
-.cI1 {
+.disable { 
+  pointer-events: none; 
+  cursor: default; 
+}
 
+.cI1 {
 width: 230px;
 }
 
@@ -2563,8 +2586,20 @@ textarea.form-control {
 .rowC {
   width: auto !important;
   position: relative;
-  padding-left:2% ;
   white-space: nowrap !important;
+  overflow: hidden !important;
+}
+
+.userPatientsHeader {
+  background-color: rgba(214, 214, 214, 0.404);
+  margin: 10px auto;
+  color: #000;
+  width: auto !important;
+  padding-left:0 !important;
+  padding-right:0 !important;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  text-decoration: none !important;
 }
 
 .userPatientsContainer {
@@ -2576,12 +2611,12 @@ textarea.form-control {
   padding-right:0 !important;
   border-radius: 10px;
   text-decoration: none !important;
-  }
+}
 
-  .userPatientsContainer:hover {
-    box-shadow: 0px 0px 3px rgb(255, 255, 255);
-    color: red;
-  }
+.userPatientsContainer:hover {
+  box-shadow: 0px 0px 3px rgb(255, 255, 255);
+  color: red;
+}
 
 .invalid-feedback {
   display: none;
@@ -8228,6 +8263,30 @@ button.bg-dark:focus {
 .ml-5,
 .mx-5 {
   margin-left: 3rem !important;
+}
+
+.m-6 {
+  margin: 7rem !important;
+}
+
+.mt-6,
+.my-6 {
+  margin-top: 7rem !important;
+}
+
+.mr-6,
+.mx-6 {
+  margin-right: 7rem !important;
+}
+
+.mb-6,
+.my-6 {
+  margin-bottom: 7rem !important;
+}
+
+.ml-6,
+.mx-6 {
+  margin-left: 7rem !important;
 }
 
 .p-0 {
