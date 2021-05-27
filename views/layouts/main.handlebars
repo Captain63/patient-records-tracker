@@ -17,7 +17,7 @@
     crossorigin="anonymous"
   />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-      <!-- Custom styles for this template-->
+    <!-- Custom styles for this template-->
   <link href="/css/stylec.css" rel="stylesheet">
   {{!-- style sheet for login and signup --}}
   <link rel="stylesheet" href="/css/style.css">
@@ -58,7 +58,6 @@
           </footer>
           </div>
       </ul>
-<<<<<<< HEAD
       <div id="content-wrapper" class="d-flex flex-column bg-dark">
         <nav class="navbar navbar-expand navbar-light bg-dark-c topbar static-top shadow">
           <!-- Sidebar Toggle (Topbar) -->
@@ -81,39 +80,6 @@
           <ul class="navbar-nav">
             <!-- Nav Item - User Information -->
             <li class="nav-item active row">
-=======
-
-    <div id="content-wrapper" class="d-flex flex-column bg-dark">
-      <nav class="navbar navbar-expand navbar-light bg-dark-c topbar static-top shadow">
-        <!-- Sidebar Toggle (Topbar) -->
-        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-            <i class="fa fa-bars"></i>
-        </button>
-        <!-- Topbar Search -->
-        <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" id="search">
-          <div class="input-group container">
-            <input type="text" class="form-control bg-light searchInput border-0 small" placeholder="Search"
-                aria-label="Search" aria-describedby="basic-addon2" id="search-bar">
-            <div class="input-group-append">
-              <button class="btn btn-primary-s" id="searchBtn"type="button">
-                <i class="fas fa-search fa-sm"></i>
-              </button>
-            </div>
-          </div>
-          <div class="input-group container"
-            <label for="categories">Search By Category</label>
-            <select id="categories" name="categories">
-              <option value="All">All</option>
-              <option value="Patient Name">Patient Name</option>
-              <option value="Record Subject">Record Subject</option>
-            </select>
-          </div>
-        </form>
-        <!-- Topbar Navbar -->
-        <ul class="navbar-nav">
-          <!-- Nav Item - User Information -->
-          <li class="nav-item active row">
->>>>>>> e319afaaf915f286024c172922ab6d1ae1e27ecc
               <a class="nav-link m-lc draw meet text-white">Welcome</a>
               <a class="nav-link m-lc draw meet text-green userDisplay">{{user.username}}!</a>
             </li>
@@ -134,7 +100,6 @@
     </div>
   {{/if}}
 
-<<<<<<< HEAD
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
@@ -150,25 +115,6 @@
   {{!-- <script src="/js/deleteRecord.js"></script> --}}
   {{!-- <script src="/js/createRecord.js"></script> --}}
   {{!-- <script src="/js/createPatient.js"></script> --}}
-=======
-    {{#if logged_in}}
-      <script src="/js/logout.js"></script>
-    {{/if}}
-      <script src="/js/editUser.js"></script>
-    <script src="/js/deletePatient.js"></script>
-    <script src="/js/editPatients.js"></script>
-    <script src="/js/editRecord.js"></script>
-    <script src="/js/deleteRecord.js"></script>
-    <script src="/js/createRecord.js"></script>
-    <script src="/js/createPatient.js"></script>
-    <script src="/js/recordDisplay.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-    <!-- Custom scripts for all pages-->
-    <script src="/js/sb-admin-2.min.js"></script>
-
->>>>>>> e319afaaf915f286024c172922ab6d1ae1e27ecc
 </body>
 
 </html>
