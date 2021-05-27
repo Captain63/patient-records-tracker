@@ -67,13 +67,21 @@
         <!-- Topbar Search -->
         <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" id="search">
           <div class="input-group container">
-            <input type="text" class="form-control bg-light searchInput border-0 small" placeholder="Search For A Patient"
+            <input type="text" class="form-control bg-light searchInput border-0 small" placeholder="Search"
                 aria-label="Search" aria-describedby="basic-addon2" id="search-bar">
             <div class="input-group-append">
               <button class="btn btn-primary-s" id="searchBtn"type="button">
                 <i class="fas fa-search fa-sm"></i>
               </button>
             </div>
+          </div>
+          <div class="input-group container"
+            <label for="categories">Search By Category</label>
+            <select id="categories" name="categories">
+              <option value="All">All</option>
+              <option value="Patient Name">Patient Name</option>
+              <option value="Record Subject">Record Subject</option>
+            </select>
           </div>
         </form>
         <!-- Topbar Navbar -->
