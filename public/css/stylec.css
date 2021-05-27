@@ -2586,8 +2586,8 @@ textarea.form-control {
 .rowC {
   width: auto !important;
   position: relative;
-  padding-left:2% ;
   white-space: nowrap !important;
+  overflow: hidden !important;
 }
 
 .userPatientsHeader {
