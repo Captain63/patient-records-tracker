@@ -27,7 +27,7 @@ async function createPatientRecordFormHandler(event) {
         });
         // when the fetch promise is fulfilled, check the response status; if the response is good, load the dashboard; if there is an error, alert with the status
         if (response.ok) {
-            document.location.replace('/');
+            document.location.replace(`/api/patients/${patient_id}`);
         } else {
             let result = await response.json()
             alert(result.message)

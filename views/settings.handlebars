@@ -1,8 +1,11 @@
 <div class="card-body bg-dark">
 	<div class="row mt-4">
 		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-			<h6 class="mb-3 text-white detailT">Personal Details</h6>
+			<h6 class="mb-3 text-white detailT">Patient Details</h6>
 		</div>
+        <div class="row button-right">
+          <div class="btn btn-success text-dark disable" >User ID# {{user.id}}</div>
+        </div>
 		<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 			<div class="form-group detialsLables">
 				<label for="fullName">Your Name</label>
@@ -45,3 +48,5 @@
 		<button type="button" id="updateUser" name="submit" class="btn btn-primary">Update!</button>
 	</div>
 </div>
+
+      <script src="/js/editUser.js"></script>

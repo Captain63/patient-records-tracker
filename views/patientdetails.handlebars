@@ -1,20 +1,21 @@
 <div class="card-body bg-dark">
-	<div class="row mt-4">
+	<div class="row mt-4 mb-6">
 		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 			<h6 class="mb-3 text-white detailT">Patient Details</h6>
 		</div>
         <div class="row button-right">
-          <a class="btn btn-danger" id="deletePatient" href="" role="button">Delete Record</a>
+			<div class="btn btn-success text-dark disable mr-4" >Patient ID# {{patient.id}}</div>
+          	<a class="btn btn-danger" id="deletePatient" href="" role="button">Delete Patient</a>
         </div>
 		<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 			<div class="form-group detialsLables">
-				<label for="fullName">Name</label>
+				<label for="fullName" class="text-nowrap">Name</label>
 				<input type="text" class="form-control" name="name" id="patientname" placeholder="{{patient.name}}">
 			</div>
 		</div>
 		<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 			<div class="form-group detialsLables">
-				<label for="username">Birth Date</label>
+				<label for="username" class="text-nowrap">Birth Date</label>
 				<input type="text" class="form-control" name="birthdate" id="birthdate" placeholder="{{format_date patient.birth_date}}">
 			</div>
 		</div>
@@ -26,24 +27,27 @@
 		</div>
 		<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 			<div class="form-group detialsLables">
-				<label for="phone">Email</label>
+				<label for="phone" class="text-nowrap">Email</label>
 				<input type="text" class="form-control" name="email" id="email" placeholder="{{patient.email}}">
 			</div>
 		</div>
 		<div class="col-xl-6 col-lg-6 col-md-10 col-sm-6 col-12">
-			<div class="form-group detialsLables">
-				<label for="website">Doctors Name</label>
-				<input type="text" class="form-control" name="doctor_name" id="doctorname" placeholder="{{patient.user.name}}">
+			<div class="form-group detialsLables ">
+				<label for="doctorname" class="text-nowrap">Doctors Name</label>
+				<input type="text" class="form-control " name="doctor_name" id="doctorname" placeholder="{{patient.user.name}}">
 			</div>
 		</div>
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 			<div class="form-group detialsLables">
-				<label for="website">Location Zip</label>
+				<label for="website" class="text-nowrap">Location Zip</label>
 				<input type="text" class="form-control" name="locationzip" id="locationzip" placeholder="{{patient.location_zip}}">
 			</div>
 		</div>
 	</div>
 	<div class="text-bottom">
-		<button type="button" id="updatePatient" name="submit" class="btn btn-primary">Update!</button>
+		<button type="button" id="updatePatient" name="submit" class="btn btn-primary">Update Patient Details</button>!</button>
 	</div>
 </div>
+
+<script src="/js/deletePatient.js"></script>
+<script src="/js/editPatients.js"></script>
