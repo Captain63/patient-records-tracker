@@ -35,7 +35,7 @@ router.get('/', withAuth, (req, res) => {
       },
       {
         model: Record,
-        attributes: ['id', 'patient_name', 'title', 'text', 'patient_id', 'user_id', 'created_at', 'user_username' ]
+        attributes: ['id', 'patient_name', 'title', 'text', 'patient_id', 'user_id', 'created_at', 'user_username', 'user_name' ]
       }
     ]
   })
@@ -49,6 +49,8 @@ router.get('/', withAuth, (req, res) => {
           // declare session variables
           req.session.user_id = dbUserData.id;
           req.session.username = dbUserData.username;
+          req.session.location_zip = dbUserData.location_zip;
+          req.session.name = dbUserData.name;
         });
         // otherwise, return the data for the requested user
         const user = dbUserData.get({ plain: true });

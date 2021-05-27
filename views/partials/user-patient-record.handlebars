@@ -1,32 +1,49 @@
+	<div class="userPatientsHeader row text-nowrap col-12 " aria-current="true">
+        <div class="rowC container row">
+            <h5>Record ID</h5>
+        </div>
+        <div class="rowC container row">
+            <h5>Created On</h4>
+        </div>
+        <div class="rowC container row">
+            <h5>Doctor ID</h4>
+        </div>
+        <div class="rowC container  row">
+            <h5> Doctor Name</h4>
+        </div>
+        <div class="rowC container  row">
+            <h5>Patient ID</h4>
+        </div>
+        <div class="rowC container  row">
+            <h5>Patient Name</h5>
+        </div>
+        <div class="rowC container  row">
+            <h5> Record Subject</h5>
+        </div>
+    </div>
+
 {{#each user.records as |record| }}
     <a href="/api/records/edit/{{record.id}}" class="userPatientsContainer row text-nowrap col-12 " aria-current="true">
         <div class="rowC container row">
-            <h5>Record ID:</h5>
-            <h5> {{record.id}}</h5>
+            <h5>#{{record.id}}</h5>
         </div>
         <div class="rowC container row">
-            <h5>Created On:</h4>
             <h5> {{format_date record.created_at}}</h5>
         </div>
         <div class="rowC container row">
-            <h5>Doctor ID:</h4>
-            <h5> {{record.user_id}}</h5>
+            <h5>#{{record.user_id}}</h5>
         </div>
         <div class="rowC container  row">
-            <h5> Doctor Name:</h4>
-            <h5> {{record.user_username}}</h5>
+            <h5> {{record.user_name}}</h5>
         </div>
         <div class="rowC container  row">
-            <h5>Patient ID:</h4>
-            <h5> {{record.patient_id}}</h5>
+            <h5>#{{record.patient_id}}</h5>
         </div>
         <div class="rowC container  row">
-            <h5>Patient Name:</h5>
             <h5> {{record.patient_name}}</h5>
         </div>
         <div class="rowC container  row">
-            <h5> Record Subject:</h5>
-            <h5> {{record.title}}</h5>
+            <h5>{{record.title}}</h5>
         </div>
     </a>
 {{/each}}

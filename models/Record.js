@@ -36,6 +36,14 @@ Record.init(
                 key: "name"
             } 
         },
+        user_name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            references: {
+                model: "user",
+                key: "name"
+            } 
+        },
         user_username: {
             type: DataTypes.STRING,
             allowNull: false,
