@@ -279,3 +279,12 @@ input[type=text]:placeholder {
 #icon {
   width:60%;
 }
+
+/* SEARCH BAR */
+.show {
+  display: flex !important;
+}
+
+.hide {
+  display: none !important;
+}
