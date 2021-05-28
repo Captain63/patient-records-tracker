@@ -2,7 +2,7 @@
 // Express.js connection
 const router = require('express').Router();
 // User, Post, Vote models
-const { User} = require('../../models');
+const { User } = require('../../models');
 // Express Session for the session data
 const session = require('express-session');
 // Authorization Helper
@@ -102,7 +102,7 @@ router.post('/login', async (req, res) => {
 
     // if the email is not found, return an error
     if (!dbUserData) {
-      res.status(400).json({ message: 'No user with that email address!' });
+      res.status(400).json({ message: 'Email or password not recognized' });
       return;
     }
 
@@ -111,7 +111,7 @@ router.post('/login', async (req, res) => {
     const validPassword = dbUserData.checkPassword(req.body.password);
     // if the password is invalid (method returns false), return an error
     if (!validPassword) {
-      res.status(400).json({ message: 'Incorrect password!' });
+      res.status(400).json({ message: 'Email or password not recognized' });
       return;
     }
     // otherwise, save the session, and return the user object and a success message
