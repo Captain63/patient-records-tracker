@@ -69,8 +69,8 @@
           <!-- Hidden by default until search.js is linked for relevant pages -->
           <form class="d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search hide" id="search">
             <div class="input-group container">
-              <input type="text" class="form-control bg-light searchInput border-0 small" placeholder="Search For A Patient"
-                  aria-label="Search" aria-describedby="basic-addon2">
+              <input type="text" class="form-control bg-light searchInput border-0 small" placeholder="Search"
+                  aria-label="Search" aria-describedby="basic-addon2" id="search-bar">
               <div class="input-group-append">
                 <button class="btn btn-primary-s" id="searchBtn"type="button">
                   <i class="fas fa-search fa-sm"></i>
@@ -101,11 +101,11 @@
             </li>
           </ul>
         </nav>
+        {{/if}}
         <main class="text-center bg-dark">
           {{{ body }}}
         </main>
     </div>
-  {{/if}}
 
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
