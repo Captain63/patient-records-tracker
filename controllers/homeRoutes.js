@@ -1,11 +1,7 @@
 // Dependencies
-const sequelize = require('../config/connection');
 const router = require('express').Router();
 const { User, Patient, Record } = require('../models');
 const withAuth = require('../utils/auth');
-const session = require('express-session');
-// Sequelize store to save the session so the user can remain logged in
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 // A route to render the dashboard page, only for a logged in user
 router.get('/', withAuth, (req, res) => {

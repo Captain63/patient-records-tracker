@@ -1,15 +1,10 @@
 // Dependencies
 // the router and the database
 const router = require('express').Router();
-const sequelize = require('../config/connection');
 // the models
 const {  User, Patient } = require('../models');
 // the authorization middleware to redirect unauthenticated users to the login page
 const withAuth = require('../utils/auth')
-// Express Session for the session data
-const session = require('express-session');
-// Sequelize store to save the session so the user can remain logged in
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 // A route to render the dashboard page, only for a logged in user
 router.get('/:id', withAuth, (req, res) => {
