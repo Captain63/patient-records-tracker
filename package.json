@@ -13,7 +13,6 @@
     "type": "git",
     "url": "git+https://github.com/Captain63/patient-records-tracker.git"
   },
-  "keywords": [],
   "authors": "Brandon Ford, James Corcoran, Rachel Handschuh, Stephen Roddewig",
   "license": "MIT",
   "bugs": {
