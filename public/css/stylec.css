@@ -46,10 +46,7 @@
 *::after {
   box-sizing: border-box;
 }
-#search input {
-  padding: 7px;
-  margin:0;
-}
+
 .account-settings .user-profile {
   margin: 0 0 1rem 0;
   padding-bottom: 1rem;
@@ -72,6 +69,17 @@ background-color: #343a40 !important;
   border: solid black 1px !important;
   color: #000 !important; 
   font-size: 16px !important;
+}
+
+.btn-c {
+border-radius: 0 !important;
+font-size: 12px !important;
+font-weight: 600 !important;
+}
+
+.btn:focus {
+  outline: none !important;
+  border: none !important;
 }
 
 .btn-danger-s {
@@ -99,14 +107,16 @@ background-color: #343a40 !important;
 }
 
 .searchInput {
-  height: 33px !important;
-  font-size: 20px !important;
+  height: 26px !important;
+  font-size: 12px !important;
   margin:  0 !important;
+  font-weight: 600;
+  width: 30%;
+  border:0;
 }
 
 .btn {
   height: 100% !important;
-
 }
 
 .account-settings .user-profile .user-avatar {
@@ -151,6 +161,16 @@ background-color: #343a40 !important;
   font-size: .825rem;
   background: #1A233A;
   color: #bcd0f7;
+}
+
+#addpatientlink:hover {
+color: rgb(255, 218, 52) !important;
+text-shadow: 0 0 4px black;
+}
+
+#logout:hover {
+  color: rgba(255, 52, 52, 0.651) !important;
+  text-shadow: 0 0 4px black;
 }
 
 .mr-0 {
@@ -232,7 +252,7 @@ height: 100%;
 height: 100%;
 }
 
-btn
+
 .contact{
 padding: 4%;
 height: 400px;
@@ -400,7 +420,6 @@ border-radius: 30px !important;
 }
 
 footer {
-
 height: 22px !important;
 font-size: 15px;
 width: 500px !important;
@@ -467,16 +486,21 @@ padding-right: 0  !important;
 padding-left: 0  !important;
 }
 
+.row-search {
+  width: fit-content;
+  padding: 0px;
+  height: 26px;
+  margin: 4px auto !important;
+}
+
 .wrapper {
 padding: 10px 5px !important;
 }
 .wrapperC {
 padding: 10px !important;
-
 }
 .wrapperFit {
 height: 100%;
-
 }
 .bg-grey {
 background-color: #b5b7c4 ;
@@ -2614,10 +2638,14 @@ textarea.form-control {
 }
 
 .userPatientsContainer:hover {
-  box-shadow: 0px 0px 3px rgb(255, 255, 255);
-  color: red;
+  box-shadow: 0px 0px 3px rgb(0, 0, 0);
+  color: rgba(255, 70, 70, 0.815);
+  background-color: rgb(99, 99, 99);
 }
 
+.userPatientsContainer div h5 {
+  margin: 2px;
+}
 .invalid-feedback {
   display: none;
   width: 100%;
@@ -2815,7 +2843,6 @@ textarea.form-control {
 
 .btn:focus, .btn.focus {
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(78, 115, 223, 0.25);
 }
 
 .btn.disabled, .btn:disabled {
