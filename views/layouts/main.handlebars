@@ -51,7 +51,11 @@
               Patients
           </div>
           <!-- Nav Item - Pages Collapse Menu -->
-          {{>patient-name}}
+          {{#if viewAll}}
+          {{>all-patient-name}}
+          {{else}}
+          {{>user-patient-name}}
+          {{/if}}
           <div class="wrapper wrapperCu">
           <footer class="text-center text-bottom bg-dark text-white">
            Thanks for visiting!💚

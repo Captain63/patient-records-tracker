@@ -51,6 +51,7 @@ router.get('/', withAuth, (req, res) => {
           req.session.username = dbUserData.username;
           req.session.location_zip = dbUserData.location_zip;
           req.session.name = dbUserData.name;
+          req.session.viewAll = false;
         });
         // otherwise, return the data for the requested user
         const user = dbUserData.get({ plain: true });
@@ -62,7 +63,6 @@ router.get('/', withAuth, (req, res) => {
         res.status(500).json(err);
       });
 })
-  
 
 router.get('/settings', (req, res) => {
   res.render('settings');
