@@ -12,24 +12,6 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 // Routes
 
-// // GET /api/users -- get all users
-// router.get('/', async (req, res) => {
-
-//   try {
-//     // Access the User model and run .findAll() method to get all users
-//     const dbUserData = await User.findAll({
-//       // when the data is sent back, exclude the password property
-//       attributes: { exclude: ['password'] }
-//     })
-
-//     // return the data as JSON formatted
-//     res.json(dbUserData)
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).json(err);
-//   }    
-// });
-
 // GET /api/users/1 -- get a single user by id
 router.get('/:id', async (req, res) => {
   try {
@@ -168,29 +150,6 @@ router.put('/update/:id', withAuth, async (req, res) => {
       res.status(500).json(err);
     }
 })
-
-
-// router.put('/update/:id', withAuth, (req, res) => {
-//   User.update(req.body,
-//       {
-//           where: {
-//               id: req.session.id
-//           }
-//       }
-//   )
-//   .then(dbRecordData => {
-//     if (!dbRecordData) {
-//       res.status(404).json({ message: 'No record found with this id' });
-//       return;
-//     } 
-//     res.json(dbRecordData);
-//   })
-//   .catch(err => {
-//     console.log(err);
-//     res.status(500).json(err);
-//   });
-// });
-
 
 // DELETE /api/users/1 -- delete an existing user
 router.delete('/:id', withAuth, async (req, res) => {

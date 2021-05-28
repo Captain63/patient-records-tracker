@@ -6,14 +6,13 @@
 				<div class="button-left">
           			<h6>number of records: {{user.records.length}}</h6>
         		</div>
-    	      	<h3 class="mb-3 text-white text-center">Recent Records</h3>
+    	      	<h3 class="mb-3 text-white text-center">Your Patient Records</h3>
     	    	<div class="button-right">
-    	    	  <a class="btn btn-primary-s" href="/api/records/create/{{patient.id}}" role="button">Create New Record</a>
-    	    	  <a class="btn btn-green " href="/api/patients/details/{{patient.id}}" role="button">Patient Details</a>
+    	    	  <a class="btn btn-green " href="/api/records/all" role="button">View All Patient Records</a>
     	    	</div>
     	 	</div>
     	</div>
-		{{>user-patient-record}}
+		{{>user-patient-records}}
     </div>
 </div>
 
