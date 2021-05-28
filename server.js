@@ -1,4 +1,3 @@
-  
 // Server for MVC Patient Records
 
 // Dependencies
@@ -66,5 +65,5 @@ app.use(routes);
 // force: false to maintain data - aka normal operation
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log(`App listening on PORT ${PORT}`));
-  });
+});
 
