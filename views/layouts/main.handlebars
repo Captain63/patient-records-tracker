@@ -41,7 +41,7 @@
           <hr class="sidebar-divider my-0">
           <!-- Nav Item - Dashboard -->
           <li class="nav-item active createlink">
-              <a class="nav-link " href="/api/patients/create">
+              <a class="nav-link" id="addpatientlink" href="/api/patients/create">
                   <span>Need to Add a New Patient?</span>
               </a>
           </li>
@@ -65,33 +65,19 @@
       </ul>
       <div id="content-wrapper" class="d-flex flex-column bg-dark">
         <nav class="navbar navbar-expand navbar-light bg-dark-c topbar static-top shadow">
-          <!-- Sidebar Toggle (Topbar) -->
-          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-              <i class="fa fa-bars"></i>
-          </button>
-          <!-- Topbar Search -->
-          <!-- Hidden by default until search.js is linked for relevant pages -->
-          <form class="d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search hide" id="search">
-            <div class="input-group container">
-              <input type="text" class="form-control bg-light searchInput border-0 small" placeholder="Search"
-                  aria-label="Search" aria-describedby="basic-addon2" id="search-bar">
-              <div class="input-group-append">
-                <button class="btn btn-primary-s" id="searchBtn"type="button">
-                  <i class="fas fa-search fa-sm"></i>
-                </button>
-              </div>
-            </div>
-            <div class="input-group container">
-              <label for="categores">Search By Category</label>
-              <select id="categories" name="categories">
-                <option value="All">All</option>
+          <form class=" column hide " id="search">
+            <div class="row-search row">
+              <select class="small-12 medium-3 btn btn-c column rounded-left text-dark btn-success " id='categories' name="categories "selected='Search by:'>
+                <option value='All' selected>All</option>
                 <option value="Patient Name">Patient Name</option>
                 <option value="Record Subject">Record Subject</option>
               </select>
+              <input class="mr-0 column searchInput " size="25"  id='search-bar'>
+              <button class="btn btn-c btn-success column rounded-right text-dark" id='searchButton'>Search</button>
             </div>
           </form>
           <!-- Topbar Navbar -->
-          <ul class="navbar-nav">
+          <ul class="navbar-nav ml-auto">
             <!-- Nav Item - User Information -->
             <li class="nav-item active row">
               <a class="nav-link m-lc draw meet text-white">Welcome</a>

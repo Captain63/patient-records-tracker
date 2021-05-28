@@ -261,7 +261,6 @@ router.get('/all', withAuth , async (req, res) => {
       return;
     }
     
-    console.log(session.viewAll)
     // otherwise, return the data for the requested user
     const patients = dbPatientData.map(patient => patient.get({ plain: true }));
     const records = dbRecordData.map(record => record.get({ plain: true }));
