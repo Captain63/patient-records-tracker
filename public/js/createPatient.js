@@ -11,7 +11,7 @@ async function createPatientFormHandler(event) {
     // const doctor_id = document.querySelector('#doctor_id').value.trim();
     
     // if both fields have content
-    if (name && birth_date && email && address && location_zip && doctor_id) {
+    if (name && birth_date && email && address) {
         // POST to the login route with the user information
         const response = await fetch('/api/patients/', {
             method: 'post',
