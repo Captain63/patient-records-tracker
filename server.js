@@ -25,8 +25,8 @@ const hbs = exphbs.create({ helpers });
 
 // Initialize sessions
 const sess = {
-    //session secret is store in .env file as DB_SESSION_SECRET
-    secret: process.env.DB_SESSION_SECRET,
+    //session secret is stored in .env file as DB_SESSION_SECRET for local deployments
+    secret: process.env.JAWSDB_URL ? "SUk1mfgCp290VTHNp9VQ" : process.env.DB_SESSION_SECRET,
     cookie: { 
       // 15 minutes in milliseconds
       maxAge: 900000
