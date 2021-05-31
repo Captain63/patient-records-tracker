@@ -162,15 +162,23 @@ font-weight: 600 !important;
   background: #1A233A;
   color: #bcd0f7;
 }
+#recordDisplay {
+  color: rgb(212, 212, 212);
+}
+
+#recordDisplay:hover {
+  color: rgb(114, 233, 187);
+  margin-left: 5%; 
+}
 
 #addpatientlink:hover {
 color: rgb(255, 218, 52) !important;
-text-shadow: 0 0 4px black;
+text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
 }
 
 #logout:hover {
   color: rgba(255, 52, 52, 0.651) !important;
-  text-shadow: 0 0 4px black;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
 }
 
 .mr-0 {
@@ -192,7 +200,7 @@ margin-bottom: 100%;
 }
 
 .retypeP {
-  font-size: 10px;
+  font-size: 15px;
   color: rgb(197, 71, 71);
   font-weight: 600;
   text-shadow: 0 0 3px black;
@@ -233,7 +241,29 @@ color: rgb(150, 223, 150) !important;
 .button-right {
   position: absolute;
   right:3%;
+  top: 20%;
   border-radius: 15px !important;
+}
+
+.button-right-group {
+  position: absolute;
+  right:3%;
+  top: 2%;
+  border-radius: 15px !important;
+}
+
+#patientDisplayName {
+  color: rgb(202, 202, 202);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.301);
+}
+
+hr {
+  background-color: rgb(114, 233, 187) !important;
+}
+
+#settings:hover {
+  color : rgb(255, 218, 52) !important; 
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
 }
 
 .button-left {
@@ -258,7 +288,6 @@ height: 100%;
 .mainContainer {
 height: 100%;
 }
-
 
 .contact{
 padding: 4%;
@@ -449,6 +478,15 @@ height: 75px;
 margin-right: 100px;
 align-items: center;
 }
+
+.btn-bottom {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-top: auto;
+  align-items: center;
+}
+
 #createpatient {
 height: 100% !important;
 width: 100% !important;
@@ -482,6 +520,7 @@ width: 100% !important;
 border-bottom-left-radius: 23px;
 border-bottom-right-radius: 23px;
 }
+
 #updatePatient {
   height: 100% !important;
   width: 100% !important;
@@ -8318,6 +8357,10 @@ button.bg-dark:focus {
 .mb-6,
 .my-6 {
   margin-bottom: 7rem !important;
+}
+
+.mb-100 {
+  margin-bottom: 10rem !important; 
 }
 
 .ml-6,
