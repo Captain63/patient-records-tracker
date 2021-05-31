@@ -171,6 +171,10 @@ font-weight: 600 !important;
   margin-left: 5%; 
 }
 
+#addpatientlink {
+  padding-bottom: 0 !important;
+}
+
 #addpatientlink:hover {
 color: rgb(255, 218, 52) !important;
 text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
@@ -187,6 +191,17 @@ margin-right: 0px !important;
 
 .containerC {
 width: 80% !important;
+}
+
+hr {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: rgb(114, 233, 187) !important;
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
 }
 
 .detailT {
@@ -241,7 +256,7 @@ color: rgb(150, 223, 150) !important;
 .button-right {
   position: absolute;
   right:3%;
-  top: 20%;
+  top: 12%;
   border-radius: 15px !important;
 }
 
@@ -255,10 +270,6 @@ color: rgb(150, 223, 150) !important;
 #patientDisplayName {
   color: rgb(202, 202, 202);
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.301);
-}
-
-hr {
-  background-color: rgb(114, 233, 187) !important;
 }
 
 #settings:hover {
@@ -278,6 +289,10 @@ hr {
 }
 
 .button-right a:hover {
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.616) !important;
+}
+
+.button-right-group a:hover {
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.616) !important;
 }
 
@@ -368,12 +383,12 @@ width:500px !important;
 height: 100% !important;
 padding:0 !important;
 padding-bottom: 10px !important;
+margin-bottom:3px !important ;
 }
 
 .createlink a span {
 margin-left: 270px;
-margin-bottom:3px !important ;
-height: 100%;
+height: auto;
 font-size: 12px !important;
 }
 .patient-nav-link {
@@ -587,15 +602,9 @@ body {
   outline: 0 !important;
 }
 
-hr {
-  box-sizing: content-box;
-  height: 0;
-  overflow: visible;
-}
-
 h1, h2, h3, h4, h5, h6 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin-top: 0.1rem !important;
+  margin-bottom: 0.1rem !important;
 }
 
 p {
@@ -933,12 +942,6 @@ h6, .h6 {
   line-height: 1.2;
 }
 .container-fluid
-hr {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  border: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
 
 small,
 .small {
