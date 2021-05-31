@@ -28,19 +28,19 @@
 {{#each records as |record| }}
     <a href="/api/records/edit/{{record.id}}" class="userPatientsContainer row text-nowrap col-12 " aria-current="true">
         <div class="  text-center col-1">
-            <h5> {{record.id}}</h5>
+            <h5> #{{record.id}}</h5>
         </div>
         <div class=" text-center col-1">
             <h5> {{format_date record.created_at}}</h5>
         </div>
         <div class=" text-center col-1">
-            <h5> {{record.user_id}}</h5>
+            <h5> #{{record.user_id}}</h5>
         </div>
         <div class=" text-center col-1">
             <h5> {{record.user_name}}</h5>
         </div>
         <div class=" text-center  col-1">
-            <h5> {{record.patient_id}}</h5>
+            <h5> #{{record.patient_id}}</h5>
         </div>
         <div class="text-center col-1">
             <h5> {{record.patient_name}}</h5>

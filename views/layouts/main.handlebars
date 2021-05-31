@@ -48,13 +48,18 @@
           <!-- Divider -->
           <hr class="sidebar-divider">
           <!-- Heading -->
-          <div class="sidebar-heading text-white">
-              Patients
-          </div>
           <!-- Nav Item - Pages Collapse Menu -->
           {{#if viewAll}}
+          <!-- Heading -->
+          <div class="sidebar-heading text-white">
+          All Patients
+          </div>
           {{>all-patient-name}}
           {{else}}
+          <!-- Heading -->
+          <div class="sidebar-heading text-white">
+            Patients
+          </div>
           {{>user-patient-name}}
           {{/if}}
           <div class="wrapper wrapperCu">
