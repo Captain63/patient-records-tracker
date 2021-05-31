@@ -183,16 +183,23 @@ width: 80% !important;
 
 .detailT {
 font-size: 30px;
+height: 50px;
 }
 
 .detialsLables {
 font-size: 40px;
-margin: 0 30%;
+margin-bottom: 100%;
 }
 
+.retypeP {
+  font-size: 10px;
+  color: rgb(197, 71, 71);
+  font-weight: 600;
+  text-shadow: 0 0 3px black;
+}
 .detialsLables input {
-width: 100% !important;
-color: green !important;
+width: 50% !important;
+color: rgb(27, 136, 27) !important;
 }
 
 ::placeholder {
@@ -1053,6 +1060,8 @@ pre code {
 .row {
   display: flex;
   flex-wrap: wrap;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .no-gutters {
