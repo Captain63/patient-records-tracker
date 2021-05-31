@@ -2,19 +2,19 @@
     <div class="text-center col-1">
         <h5>Record ID</h5>
     </div>
-    <div class=" text-center col-1">
+    <div class="8text-center col-1">
         <h5>Created On</h4>
     </div>
-    <div class=" text-center col-1">
+    <div class="text-center col-1">
         <h5>Doctor ID</h4>
     </div>
     <div class="text-center col-1">
         <h5> Doctor Name</h4>
     </div>
-    <div class=" text-center col-1">
+    <div class="text-center col-1">
         <h5>Patient ID</h4>
     </div>
-    <div class=" text-center col-1">
+    <div class="text-center col-1">
         <h5>Patient Name</h5>
     </div>
     <div class="text-center col-3">
@@ -23,26 +23,26 @@
 </div>
 
 {{#each records as |record| }}
-    <a href="/api/records/edit/{{record.id}}" class="userPatientsContainer row text-nowrap col-12 " aria-current="true">
-        <div class="  text-center col-1">
+    <a href="/api/records/edit/{{record.id}}" class="userPatientsContainer row text-nowrap col-12 searchContainer" aria-current="true">
+        <div class="text-center col-1">
             <h5> #{{record.id}}</h5>
         </div>
-        <div class=" text-center col-1">
+        <div class="text-center col-1">
             <h5> {{format_date record.created_at}}</h5>
         </div>
-        <div class=" text-center col-1">
+        <div class="text-center col-1">
             <h5> #{{record.user_id}}</h5>
         </div>
-        <div class=" text-center col-1">
+        <div class="text-center col-1">
             <h5> {{record.user_name}}</h5>
         </div>
-        <div class=" text-center  col-1">
+        <div class="text-center  col-1">
             <h5> #{{record.patient_id}}</h5>
         </div>
-        <div class="text-center col-1">
+        <div class="text-center col-1 patient-name">
             <h5> {{record.patient_name}}</h5>
         </div>
-        <div class=" text-center col-3">
+        <div class="text-center col-3 record-subject">
             <h5> {{record.title}}</h5>
         </div>
     </a>
