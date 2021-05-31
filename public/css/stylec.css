@@ -162,15 +162,27 @@ font-weight: 600 !important;
   background: #1A233A;
   color: #bcd0f7;
 }
+#recordDisplay {
+  color: rgb(212, 212, 212);
+}
+
+#recordDisplay:hover {
+  color: rgb(114, 233, 187);
+  margin-left: 5%; 
+}
+
+#addpatientlink {
+  padding-bottom: 0 !important;
+}
 
 #addpatientlink:hover {
 color: rgb(255, 218, 52) !important;
-text-shadow: 0 0 4px black;
+text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
 }
 
 #logout:hover {
   color: rgba(255, 52, 52, 0.651) !important;
-  text-shadow: 0 0 4px black;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
 }
 
 .mr-0 {
@@ -181,18 +193,36 @@ margin-right: 0px !important;
 width: 80% !important;
 }
 
+hr {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: rgb(114, 233, 187) !important;
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
 .detailT {
 font-size: 30px;
+height: 50px;
 }
 
 .detialsLables {
 font-size: 40px;
-margin: 0 30%;
+margin-bottom: 100%;
 }
 
+.retypeP {
+  font-size: 15px;
+  color: rgb(197, 71, 71);
+  font-weight: 600;
+  text-shadow: 0 0 3px black;
+}
 .detialsLables input {
-width: 100% !important;
-color: green !important;
+width: 50% !important;
+color: rgb(27, 136, 27) !important;
 }
 
 ::placeholder {
@@ -226,7 +256,25 @@ color: rgb(150, 223, 150) !important;
 .button-right {
   position: absolute;
   right:3%;
+  top: 12%;
   border-radius: 15px !important;
+}
+
+.button-right-group {
+  position: absolute;
+  right:3%;
+  top: 2%;
+  border-radius: 15px !important;
+}
+
+#patientDisplayName {
+  color: rgb(202, 202, 202);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.301);
+}
+
+#settings:hover {
+  color : rgb(255, 218, 52) !important; 
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
 }
 
 .button-left {
@@ -244,6 +292,10 @@ color: rgb(150, 223, 150) !important;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.616) !important;
 }
 
+.button-right-group a:hover {
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.616) !important;
+}
+
 .homeContainer {
 height: 100%;
 }
@@ -251,7 +303,6 @@ height: 100%;
 .mainContainer {
 height: 100%;
 }
-
 
 .contact{
 padding: 4%;
@@ -332,12 +383,12 @@ width:500px !important;
 height: 100% !important;
 padding:0 !important;
 padding-bottom: 10px !important;
+margin-bottom:3px !important ;
 }
 
 .createlink a span {
 margin-left: 270px;
-margin-bottom:3px !important ;
-height: 100%;
+height: auto;
 font-size: 12px !important;
 }
 .patient-nav-link {
@@ -442,6 +493,15 @@ height: 75px;
 margin-right: 100px;
 align-items: center;
 }
+
+.btn-bottom {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-top: auto;
+  align-items: center;
+}
+
 #createpatient {
 height: 100% !important;
 width: 100% !important;
@@ -475,6 +535,7 @@ width: 100% !important;
 border-bottom-left-radius: 23px;
 border-bottom-right-radius: 23px;
 }
+
 #updatePatient {
   height: 100% !important;
   width: 100% !important;
@@ -541,15 +602,9 @@ body {
   outline: 0 !important;
 }
 
-hr {
-  box-sizing: content-box;
-  height: 0;
-  overflow: visible;
-}
-
 h1, h2, h3, h4, h5, h6 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin-top: 0.1rem !important;
+  margin-bottom: 0.1rem !important;
 }
 
 p {
@@ -887,12 +942,6 @@ h6, .h6 {
   line-height: 1.2;
 }
 .container-fluid
-hr {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  border: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
 
 small,
 .small {
@@ -1053,6 +1102,8 @@ pre code {
 .row {
   display: flex;
   flex-wrap: wrap;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .no-gutters {
@@ -8309,6 +8360,10 @@ button.bg-dark:focus {
 .mb-6,
 .my-6 {
   margin-bottom: 7rem !important;
+}
+
+.mb-100 {
+  margin-bottom: 10rem !important; 
 }
 
 .ml-6,
