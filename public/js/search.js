@@ -7,7 +7,7 @@ document.querySelector("#search").classList.remove("hide");
 const searchBar = document.querySelector("#search-bar");
 
 // Creates array of all searchable fields from patient records
-const searchArray = Array.from(document.querySelectorAll(".userPatientsContainer"));
+const searchArray = Array.from(document.querySelectorAll(".searchContainer"));
 
 for (let i = 0; i < searchArray.length; i++) {
     // Creates empty strings property to hold retrieved values for All search
