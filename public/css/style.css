@@ -292,3 +292,13 @@ input[type=text]:placeholder {
 .hide#search {
   display: none !important;
 }
+
+@media screen and (max-width: 1000px){
+  #wrapper {
+    flex-direction: column;
+  }
+
+  /* #page-top {
+    display:block;
+  } */
+}
