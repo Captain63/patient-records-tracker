@@ -293,10 +293,6 @@ input[type=text]:placeholder {
   display: none !important;
 }
 
-.button-right {
-  top: 0;
-}
-
 @media screen and (max-width: 1440px){
   #wrapper {
     flex-direction: column;
@@ -310,13 +306,7 @@ input[type=text]:placeholder {
 
   .navbar-nav {
     /* text-align: center !important; */
-    padding: 0 50px !important;
-  }
-}
-
-@media only screen and (max-width: 992px) {
-  .button-right {
-    top: 12%;
+    padding-left: 50px !important;
   }
 }
 

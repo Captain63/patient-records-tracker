@@ -209,7 +209,7 @@ height: 50px;
 }
 
 .detialsLables {
-font-size: 32px;
+font-size: 40px;
 margin-bottom: 100%;
 }
 
@@ -220,7 +220,7 @@ margin-bottom: 100%;
   text-shadow: 0 0 3px black;
 }
 .detialsLables input {
-width: 85% !important;
+width: 50% !important;
 color: rgb(27, 136, 27) !important;
 }
 
@@ -361,7 +361,7 @@ white-space: nowrap;
 }
 
 .sidebar {
-width: 100% !important;
+width: 500px !important;
 height: 100% !important;
 }
 
@@ -602,8 +602,14 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
+<<<<<<< HEAD
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-family: 'Roboto', sans-serif;
+=======
   margin-top: 0.1rem !important;
   margin-bottom: 0.1rem !important;
+>>>>>>> c4cb96cf1db7788a44181d1911c5e67ad0c15cc1
 }
 
 p {
@@ -10903,6 +10909,11 @@ a:focus {
 
 .topbar.navbar-light .navbar-nav .nav-item .nav-link:active {
   color: #858796;
+}
+
+.sidebar {
+  width: 6.5rem;
+  min-height: 100vh;
 }
 
 .sidebar .nav-item {
