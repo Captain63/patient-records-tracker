@@ -5,8 +5,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/clipboard-icon-96px.png">
+    <meta name="description" content="Full stack application for creating, searching and deleting patient records.">
   <title>MVC Patient Records</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
@@ -17,6 +18,7 @@
     crossorigin="anonymous"
   />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<<<<<<< HEAD
   <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Noto+Sans+JP&family=Roboto&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
@@ -30,6 +32,22 @@
     <div id="wrapper">
       <!-- Sidebar -->
       <ul class="navbar-nav content-wrapper bg-info text-white sidebar sidebar-dark accordion" id="accordionSidebar ">
+=======
+    <!-- Custom styles for this template-->
+  <link href="/css/stylec.css" rel="stylesheet">
+  {{!-- style sheet for login and signup --}}
+  <link rel="stylesheet" href="/css/style.css">
+  {{!-- <link rel="stylesheet" href="/css/calendar.css"> --}}
+
+</head>
+
+<body  id="page-top" class=" bg-dark text-white">
+  <!-- Prevents sidebar and topbar from displaying for sign in and sign up pages -->
+  {{#if logged_in}}
+    <div id="wrapper">
+      <!-- Sidebar -->
+      <ul class="navbar-nav content-wrapper bg-gradient-dark-o sidebar sidebar-dark ">
+>>>>>>> c4cb96cf1db7788a44181d1911c5e67ad0c15cc1
           <!-- Sidebar - Brand -->
           <a class="sidebar-brand d-flex text-top align-items-center justify-content-center" href="/">
               <div class="sidebar-brand-icon rotate-n-15">
@@ -41,24 +59,42 @@
           <hr class="sidebar-divider my-0">
           <!-- Nav Item - Dashboard -->
           <li class="nav-item active createlink">
-              <a class="nav-link " href="/api/patients/create">
+              <a class="nav-link" id="addpatientlink" href="/api/patients/create">
                   <span>Need to Add a New Patient?</span>
               </a>
           </li>
           <!-- Divider -->
           <hr class="sidebar-divider">
           <!-- Heading -->
+          <!-- Nav Item - Pages Collapse Menu -->
+          {{#if viewAll}}
+          <!-- Heading -->
           <div class="sidebar-heading text-white">
-              Patients
+          All Patients
           </div>
+<<<<<<< HEAD
           <!-- Nav Item - Pages Collapse Menu -->
           {{>patient-name}}
           <div class="wrapper wrapperCu ">
           <footer class="text-center text-bottom bg-info text-white">
+=======
+          {{>all-patient-name}}
+          {{else}}
+          <!-- Heading -->
+          <div class="sidebar-heading text-white">
+            Patients
+          </div>
+          {{>user-patient-name}}
+          {{/if}}
+          {{!-- {{>calendar}} --}}
+          <div class="wrapper wrapperCu">
+          <footer class="text-center text-bottom bg-dark text-white">
+>>>>>>> c4cb96cf1db7788a44181d1911c5e67ad0c15cc1
            Thanks for visiting!💚
           </footer>
           </div>
       </ul>
+<<<<<<< HEAD
 
     <div id="content-wrapper" class="d-flex flex-column bg-info text-white">
       <nav class="navbar navbar-expand navbar-light bg-info text-white topbar static-top shadow">
@@ -75,14 +111,27 @@
               <button class="btn btn-primary-s" id="searchBtn"type="button">
                 <i class="fas fa-search fa-sm"></i>
               </button>
+=======
+      <div id="content-wrapper" class="d-flex flex-column bg-dark">
+        <nav class="navbar navbar-expand navbar-light bg-dark-c topbar static-top shadow">
+          <form class=" column hide " id="search">
+            <div class="row-search row">
+              <select class="small-12 medium-3 btn btn-c column rounded-left text-dark btn-success " id='categories' name="categories "selected='Search by:'>
+                <option value='All' selected>All</option>
+                <option value="Patient Name">Patient Name</option>
+                <option value="Record Subject">Record Subject</option>
+              </select>
+              <input class="mr-0 column searchInput " size="25"  id='search-bar'>
+              <button class="btn btn-c btn-success column rounded-right text-dark" id='searchButton'>Search</button>
+>>>>>>> c4cb96cf1db7788a44181d1911c5e67ad0c15cc1
             </div>
-          </div>
-        </form>
-        <!-- Topbar Navbar -->
-        <ul class="navbar-nav">
-          <!-- Nav Item - User Information -->
-          <li class="nav-item active row">
+          </form>
+          <!-- Topbar Navbar -->
+          <ul class="navbar-nav ml-auto">
+            <!-- Nav Item - User Information -->
+            <li class="nav-item active row">
               <a class="nav-link m-lc draw meet text-white">Welcome</a>
+<<<<<<< HEAD
                    <a class="nav-link m-lc draw meet text-green userDisplay">{{user.username}}!</a>
           </li>
           <li class="nav-item active">
@@ -95,30 +144,40 @@
       </nav>
       {{/if}}
         <main class="text-center bg-bg-info text-white">
+=======
+              <a class="nav-link m-lc draw meet text-green userDisplay">{{user.username}}!</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link m-lc text-white draw meet" href="/settings/{{user.id}}"  id="settings">Settings <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link p-font-color m-lc mr-2 text-white" href="#logout" id="logout">Logout</a>
+            </li>
+          </ul>
+        </nav>
+        {{/if}}
+        <main class="text-center bg-dark">
+>>>>>>> c4cb96cf1db7788a44181d1911c5e67ad0c15cc1
           {{{ body }}}
         </main>
-          {{#if logged_in}}
-
-          {{/if}}
     </div>
 
-    {{#if logged_in}}
-      <script src="/js/logout.js"></script>
-    {{/if}}
-      <script src="/js/editUser.js"></script>
-    <script src="/js/deletePatient.js"></script>
-    <script src="/js/editPatients.js"></script>
-    <script src="/js/editRecord.js"></script>
-    <script src="/js/deleteRecord.js"></script>
-    <script src="/js/createRecord.js"></script>
-    <script src="/js/createPatient.js"></script>
-    <script src="/js/recordDisplay.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-    <!-- Custom scripts for all pages-->
-    <script src="/js/sb-admin-2.min.js"></script>
-
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+  <!-- Custom scripts for all pages-->
+  {{!-- <script src="/js/sb-admin-2.min.js"></script> --}}
+  {{!-- <script src="/js/editUser.js"></script> --}}
+  {{!-- <script src="/js/deletePatient.js"></script> --}}
+  {{!-- <script src="/js/editPatients.js"></script> --}}
+  {{!-- <script src="/js/editRecord.js"></script> --}}
+  {{!-- <script src="/js/deleteRecord.js"></script> --}}
+  {{!-- <script src="/js/createRecord.js"></script> --}}
+  {{!-- <script src="/js/createPatient.js"></script> --}}
+  {{!-- <script src='/js/calendar.js'></script> --}}
 </body>
 
 </html>

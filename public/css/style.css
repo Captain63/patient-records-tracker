@@ -16,6 +16,7 @@ a {
   font-weight: 400;
 }
 
+
 h2 {
   text-align: center;
   font-size: 16px;
@@ -25,7 +26,6 @@ h2 {
   margin: 40px 8px 10px 8px; 
   color: #cccccc;
 }
-
 
 
 /* STRUCTURE */
@@ -114,7 +114,7 @@ input[type=button]:active, input[type=submit]:active, input[type=reset]:active  
   transform: scale(0.95);
 }
 
-input[type=text] {
+input[type=text], input[type=password], input[type=email] {
   background-color: #f6f6f6;
   border: none;
   color: #0d0d0d;
@@ -287,4 +287,18 @@ input[type=text]:placeholder {
 
 .hide {
   display: none !important;
+}
+
+.hide#search {
+  display: none !important;
+}
+
+@media screen and (max-width: 1000px){
+  #wrapper {
+    flex-direction: column;
+  }
+
+  /* #page-top {
+    display:block;
+  } */
 }

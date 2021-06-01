@@ -1,24 +1,24 @@
-
-	<div class="card-body bg-dark">
-		<div class="mb-3 text-white container text-center col-12">
-		<div class=" patientNameContainer container m-auto ">
-          <h3 id="patientDisplayName">{{patient.name}}</h3>
-          <h3>s Records</h3>
-        </div>
-		</div>
-
-		<div class="row m-0 col-12">
-    	    <div class="col-xl-12 col-lg-12 col-md-6 col-sm-6 column ">
-    	        <div class="form-group ">
-					<input type="textC" class="form-control" id="recordTitle" placeholder="Record Title">
-				</div>
-				<div class="form-group " id="infoID">
-					<textarea type="textC" class="form-control" id="information" placeholder="Type Record Information Here"></textarea>
-				</div>
+<div class="card-body bg-dark">
+	<div class="mb-3 text-white container text-center col-12">
+	<div class=" patientNameContainer container m-auto ">
+		<h3>New Record For </h3>
+      	<h3 id="patientDisplayName">{{patient.name}}</h3>
+		<hr>
+    </div>
+	</div>
+	<div class="row m-0 col-12">
+	    <div class="col-xl-12 col-lg-12 col-md-6 col-sm-6 column ">
+	        <div class="form-group ">
+				<input type="textC" class="form-control" id="recordTitle" placeholder="Record Title">
+			</div>
+			<div class="form-group " id="infoID">
+				<textarea type="textC" class="form-control" id="information" placeholder="Type Record Information Here"></textarea>
 			</div>
 		</div>
-		<div class="text-bottom">
-			<button type="button" id="createrecord" name="submit" class="btn btn-primary" >Create Record</button>
-		</div>
 	</div>
+	<div class="text-bottom">
+		<button type="button" id="createrecord" name="submit" class="btn btn-primary" >Create Record</button>
+	</div>
+</div>
 
+<script src="/js/createRecord.js"></script>

@@ -2,7 +2,7 @@
 // Express.js connection
 const router = require('express').Router();
 // User, Post, Vote models
-const { User} = require('../../models');
+const { User } = require('../../models');
 // Express Session for the session data
 const session = require('express-session');
 // Authorization Helper
@@ -11,24 +11,6 @@ const withAuth = require('../../utils/auth');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 // Routes
-
-// // GET /api/users -- get all users
-// router.get('/', async (req, res) => {
-
-//   try {
-//     // Access the User model and run .findAll() method to get all users
-//     const dbUserData = await User.findAll({
-//       // when the data is sent back, exclude the password property
-//       attributes: { exclude: ['password'] }
-//     })
-
-//     // return the data as JSON formatted
-//     res.json(dbUserData)
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).json(err);
-//   }    
-// });
 
 // GET /api/users/1 -- get a single user by id
 router.get('/:id', async (req, res) => {
@@ -76,6 +58,7 @@ router.post('/', (req, res) => {
         req.session.username = dbUserData.username;
         req.session.name = dbUserData.name;
         req.session.location_zip = dbUserData.location_zip
+        req.session.email = dbUserData.email;
         req.session.logged_in = true;
     
         res.json(dbUserData);
@@ -101,7 +84,7 @@ router.post('/login', async (req, res) => {
 
     // if the email is not found, return an error
     if (!dbUserData) {
-      res.status(400).json({ message: 'No user with that email address!' });
+      res.status(400).json({ message: 'Email or password not recognized' });
       return;
     }
 
@@ -110,13 +93,13 @@ router.post('/login', async (req, res) => {
     const validPassword = dbUserData.checkPassword(req.body.password);
     // if the password is invalid (method returns false), return an error
     if (!validPassword) {
-      res.status(400).json({ message: 'Incorrect password!' });
+      res.status(400).json({ message: 'Email or password not recognized' });
       return;
     }
     // otherwise, save the session, and return the user object and a success message
     req.session.save(() => {
       // declare session variables
-      req.session.id = dbUserData.id;
+      req.session.user_id = dbUserData.id;
       req.session.username = dbUserData.username;
       req.session.logged_in = true;
     
@@ -167,29 +150,6 @@ router.put('/update/:id', withAuth, async (req, res) => {
       res.status(500).json(err);
     }
 })
-
-
-// router.put('/update/:id', withAuth, (req, res) => {
-//   User.update(req.body,
-//       {
-//           where: {
-//               id: req.session.id
-//           }
-//       }
-//   )
-//   .then(dbRecordData => {
-//     if (!dbRecordData) {
-//       res.status(404).json({ message: 'No record found with this id' });
-//       return;
-//     } 
-//     res.json(dbRecordData);
-//   })
-//   .catch(err => {
-//     console.log(err);
-//     res.status(500).json(err);
-//   });
-// });
-
 
 // DELETE /api/users/1 -- delete an existing user
 router.delete('/:id', withAuth, async (req, res) => {

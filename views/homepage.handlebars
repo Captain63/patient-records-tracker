@@ -1,16 +1,30 @@
+<<<<<<< HEAD
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Noto+Sans+JP&family=Roboto&display=swap" rel="stylesheet">
 <div class="card-body bg-info text-dark border border-white">
+=======
+<div class="card-body bg-dark">
+>>>>>>> c4cb96cf1db7788a44181d1911c5e67ad0c15cc1
 	<div class="colum col-12">
     	<div class="wrapper col-12">
     	  	<div class="row">
-    	      	<h3 class="mb-3 text-white text-center">Recent Records</h3>
+				<div class="button-left">
+          			<h6>number of records: {{user.records.length}}</h6>
+        		</div>
+    	      	<h3 class="mb-0 text-white text-center">Your Patient Records</h3>
     	    	<div class="button-right">
+<<<<<<< HEAD
     	    	  <a class="btn border border-white text-white" href="/api/records/create/{{patient.id}}" role="button">Create New Record</a>
     	    	  <a class="btn border border-white text-white " href="/api/patients/details/{{patient.id}}" role="button">Patient Details</a>
+=======
+    	    	  <a class="btn btn-green " href="/api/records/all" role="button">View All Patient Records</a>
+>>>>>>> c4cb96cf1db7788a44181d1911c5e67ad0c15cc1
     	    	</div>
     	 	</div>
     	</div>
-		{{>user-patient-record}}
+		<hr>
+		{{>user-patient-records}}
     </div>
 </div>
+
+<script src="/js/search.js"></script>

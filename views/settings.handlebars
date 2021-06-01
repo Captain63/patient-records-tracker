@@ -1,47 +1,38 @@
-<div class="card-body bg-dark">
-	<div class="row mt-4">
-		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-			<h6 class="mb-3 text-white detailT">Personal Details</h6>
-		</div>
-		<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-			<div class="form-group detialsLables">
-				<label for="fullName">Your Name</label>
-				<input type="text" class="form-control" id="name" placeholder="{{user.name}}">
-			</div>
-		</div>
-		<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-			
-			<div class="form-group detialsLables">
-				<label class=""for="username">Username</label>
-				<input type="text" class="form-control" disabled="disabled" id="username" placeholder="{{user.username}} - Cannot be Updated">
-			</div>
-		</div>
-		<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-			<div class="form-group detialsLables">
-				<label for="phone">Email</label>
-				<input type="text" class="form-control" id="email" placeholder="{{user.email}}">
-			</div>
-		</div>
-		<div class="col-xl-6 col-lg-6 col-md-10 col-sm-6 col-12">
-			<div class="form-group detialsLables">
-				<label for="website">Password</label>
-				<input type="text" class="form-control" id="password" placeholder="Hidden Password">
-			</div>
-		</div>
-        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-			<div class="form-group detialsLables">
-				<label for="website">Address</label>
-				<input type="text" class="form-control" id="address" placeholder="{{user.address}}">
-			</div>
-		</div>
-        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-			<div class="form-group detialsLables">
-				<label for="website">Location Zip</label>
-				<input type="text" class="form-control" id="locationzip" placeholder="{{user.location_zip}}">
-			</div>
-		</div>
+<div class="card-body bg-dark row">
+	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 h-0 ">
+		<h6 class="mb-3 text-white detailT ">User Details</h6>
 	</div>
-	<div class="text-bottom">
+    <div class="row button-right-group">
+      <div class="btn btn-success text-dark disable" >User ID# {{user.id}}</div>
+    </div>
+	<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 form-group detialsLables">
+		<label class="col-12" for="fullName">Your Name</label>
+		<input type="text" class="form-control" id="name" value="{{user.name}}">
+	</div>
+	<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 form-group detialsLables">
+		<label class="col-12" for="username">Username</label>
+		<input type="text" class="form-control" disabled="disabled" id="username" value="{{user.username}} - Cannot be Updated">
+	</div>
+	<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 form-group detialsLables">
+		<label class="col-12" for="phone">Email</label>
+		<input type="text" class="form-control" id="email" value="{{user.email}}">
+	</div>
+	<div class="col-xl-6 col-lg-6 col-md-10 col-sm-6 col-12 form-group detialsLables">
+		<label class="col-12" for="website">Password</label>
+		<input type="text" class="form-control" id="password" placeholder="Hidden Password">
+		<label class="retypeP col-12">If updating, please re-type password</label>
+	</div>
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 form-group detialsLables">
+		<label class="col-12" for="website">Address</label>
+		<input type="text" class="form-control" id="address" value="{{user.address}}">
+	</div>
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 form-group detialsLables mb-6">
+		<label class="col-12" for="website">Location Zip</label>
+		<input type="text" class="form-control" id="locationzip" value="{{user.location_zip}}">
+	</div>
+	<div class="btn-bottom">
 		<button type="button" id="updateUser" name="submit" class="btn btn-primary">Update!</button>
 	</div>
 </div>
+
+<script src="/js/editUser.js"></script>

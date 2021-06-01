@@ -1,11 +1,7 @@
 // Dependencies
-const sequelize = require('../config/connection');
 const router = require('express').Router();
 const { User, Patient, Record } = require('../models');
 const withAuth = require('../utils/auth');
-const session = require('express-session');
-// Sequelize store to save the session so the user can remain logged in
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 // A route to render the dashboard page, only for a logged in user
 router.get('/', withAuth, (req, res) => {
@@ -35,7 +31,7 @@ router.get('/', withAuth, (req, res) => {
       },
       {
         model: Record,
-        attributes: ['id', 'patient_name', 'title', 'text', 'patient_id', 'user_id', 'created_at', 'user_username' ]
+        attributes: ['id', 'patient_name', 'title', 'text', 'patient_id', 'user_id', 'created_at', 'user_username', 'user_name' ]
       }
     ]
   })
@@ -49,6 +45,9 @@ router.get('/', withAuth, (req, res) => {
           // declare session variables
           req.session.user_id = dbUserData.id;
           req.session.username = dbUserData.username;
+          req.session.location_zip = dbUserData.location_zip;
+          req.session.name = dbUserData.name;
+          req.session.viewAll = false;
         });
         // otherwise, return the data for the requested user
         const user = dbUserData.get({ plain: true });
@@ -60,7 +59,6 @@ router.get('/', withAuth, (req, res) => {
         res.status(500).json(err);
       });
 })
-  
 
 router.get('/settings', (req, res) => {
   res.render('settings');

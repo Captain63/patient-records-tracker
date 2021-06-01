@@ -1,4 +1,3 @@
-  
 // Server for MVC Patient Records
 
 // Dependencies
@@ -13,9 +12,9 @@ const routes = require('./controllers/');
 // Sequelize connection to the database
 const sequelize = require('./config/connection');
 // Handlebars template engine for front-end
-const exphbs = require('express-handlebars')
+const exphbs = require('express-handlebars');
 // Express session to handle session cookies
-const session = require('express-session')
+const session = require('express-session');
 // Sequelize store to save the session so the user can remain logged in
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 // Handlebars helpers
@@ -26,8 +25,8 @@ const hbs = exphbs.create({ helpers });
 
 // Initialize sessions
 const sess = {
-    //session secret is store in .env file as DB_SESSION_SECRET
-    secret: process.env.DB_SESSION_SECRET,
+    //session secret is stored in .env file as DB_SESSION_SECRET for local deployments
+    secret: process.env.JAWSDB_URL ? "SUk1mfgCp290VTHNp9VQ" : process.env.DB_SESSION_SECRET,
     cookie: { 
       // 15 minutes in milliseconds
       maxAge: 900000
@@ -66,5 +65,5 @@ app.use(routes);
 // force: false to maintain data - aka normal operation
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log(`App listening on PORT ${PORT}`));
-  });
+});
 
