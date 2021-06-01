@@ -293,12 +293,36 @@ input[type=text]:placeholder {
   display: none !important;
 }
 
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 1440px){
   #wrapper {
     flex-direction: column;
   }
 
-  /* #page-top {
-    display:block;
-  } */
+  .navbar { 
+    display:block !important; 
+    padding: 80px 0px !important;
+
+  }
+
+  .navbar-nav {
+    /* text-align: center !important; */
+    padding-left: 50px !important;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .colum .col-12 {
+    /* padding: 50px; */
+    flex-direction: column;
+  }
+
+  h6 {
+    visibility: hidden;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  h3 {
+    visibility: hidden;
+  }
 }
