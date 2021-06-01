@@ -1127,6 +1127,7 @@ pre code {
   width: 100%;
   padding-right: 0.75rem;
   padding-left: 0.75rem;
+  column-gap: 20px !important;
 }
 
 .col {
@@ -10083,6 +10084,8 @@ button.bg-dark:focus {
 
 .text-center {
   text-align: center !important;
+  padding-right: 100px !important;
+  /* font-size: 50%; */
 }
 
 @media (min-width: 576px) {
