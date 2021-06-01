@@ -37,7 +37,8 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-
+  --font-family-sans-serif: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 *,
@@ -332,7 +333,7 @@ border-bottom-right-radius: 0.5rem;
 font-weight:600;
 }
 .contact-form button{
-background: #151b8a;
+background: #25274d;
 color: #fff;
 font-weight: 600;
 width: 25%;
@@ -573,7 +574,7 @@ flex-direction: column;
 justify-content: space-between;
 }
 html {
-  
+  font-family: sans-serif;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -588,13 +589,13 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
+  font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
   text-align: left;
-  color: #000;
-  background-color: white;
-  font-family: 'Noto Sans JP', sans-serif;
+  color: #bcd0f7;
+  background: #1A233A;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -602,20 +603,13 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-<<<<<<< HEAD
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-  font-family: 'Roboto', sans-serif;
-=======
   margin-top: 0.1rem !important;
   margin-bottom: 0.1rem !important;
->>>>>>> c4cb96cf1db7788a44181d1911c5e67ad0c15cc1
 }
 
 p {
   margin-top: 0;
   margin-bottom: 1rem;
-  font-family: 'Noto Sans JP', sans-serif;
 }
 
 abbr[title],
@@ -712,6 +706,7 @@ pre,
 code,
 kbd,
 samp {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   font-size: 1em;
 }
 
@@ -772,6 +767,9 @@ select,
 optgroup,
 textarea {
   margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
 }
 
 button,
@@ -6412,6 +6410,7 @@ a.close.disabled {
   z-index: 1070;
   display: block;
   margin: 0;
+  font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -6524,6 +6523,7 @@ a.close.disabled {
   z-index: 1060;
   display: block;
   max-width: 276px;
+  font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -10053,7 +10053,7 @@ button.bg-dark:focus {
 }
 
 .text-monospace {
-  font-family: 'Noto Sans JP', sans-serif; 
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
 }
 
 .text-justify {
@@ -10241,7 +10241,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .text-body {
-  color: #1c7e29 !important;
+  color: #858796 !important;
 }
 
 .text-muted {
@@ -10382,7 +10382,7 @@ a:focus {
 }
 
 #wrapper #content-wrapper {
-  background-color: #77c751;
+  background-color: #f8f9fc;
   width: 100%;
   overflow-x: hidden;
 }
@@ -10731,7 +10731,7 @@ a:focus {
   border: 0;
   font-weight: 900;
   content: '\f105';
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Font Awesome 5 Free';
 }
 
 .sidebar .nav-item.dropdown.show .dropdown-toggle::after,
@@ -11013,7 +11013,7 @@ a:focus {
 .sidebar #sidebarToggle::after {
   font-weight: 900;
   content: '\f104';
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Font Awesome 5 Free';
   margin-right: 0.1rem;
 }
 
@@ -11143,7 +11143,7 @@ a:focus {
     border: 0;
     font-weight: 900;
     content: '\f107';
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Font Awesome 5 Free';
   }
   .sidebar .nav-item .nav-link[data-toggle="collapse"].collapsed::after {
     content: '\f105';
@@ -11401,7 +11401,7 @@ a:focus {
   line-height: 51px;
   font-weight: 900;
   content: '\f107';
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Font Awesome 5 Free';
   color: #d1d3e2;
 }
 
@@ -11867,7 +11867,4 @@ footer.sticky-footer .copyright {
 
 body.sidebar-toggled footer.sticky-footer {
   width: 100%;
-}
-.btn{
-  background-color: #38be8d;
 }
