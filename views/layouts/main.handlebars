@@ -18,26 +18,11 @@
     crossorigin="anonymous"
   />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-<<<<<<< HEAD
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Noto+Sans+JP&family=Roboto&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
-      <!-- Custom styles for this template-->
-    <link href="/css/stylec.css" rel="stylesheet">
- 
-</head>
-
-<body  id="page-top" class=" bg-info text-white">
-  {{#if logged_in}}
-    <div id="wrapper">
-      <!-- Sidebar -->
-      <ul class="navbar-nav content-wrapper bg-info text-white sidebar sidebar-dark accordion" id="accordionSidebar ">
-=======
-    <!-- Custom styles for this template-->
+  <!-- Custom styles for this template-->
   <link href="/css/stylec.css" rel="stylesheet">
-  {{!-- style sheet for login and signup --}}
+  <!-- style sheet for login and signup -->
   <link rel="stylesheet" href="/css/style.css">
-  {{!-- <link rel="stylesheet" href="/css/calendar.css"> --}}
+  <!-- <link rel="stylesheet" href="/css/calendar.css"> -->
 
 </head>
 
@@ -47,7 +32,6 @@
     <div id="wrapper">
       <!-- Sidebar -->
       <ul class="navbar-nav content-wrapper bg-gradient-dark-o sidebar sidebar-dark ">
->>>>>>> c4cb96cf1db7788a44181d1911c5e67ad0c15cc1
           <!-- Sidebar - Brand -->
           <a class="sidebar-brand d-flex text-top align-items-center justify-content-center" href="/">
               <div class="sidebar-brand-icon rotate-n-15">
@@ -72,12 +56,6 @@
           <div class="sidebar-heading text-white">
           All Patients
           </div>
-<<<<<<< HEAD
-          <!-- Nav Item - Pages Collapse Menu -->
-          {{>patient-name}}
-          <div class="wrapper wrapperCu ">
-          <footer class="text-center text-bottom bg-info text-white">
-=======
           {{>all-patient-name}}
           {{else}}
           <!-- Heading -->
@@ -89,29 +67,10 @@
           {{!-- {{>calendar}} --}}
           <div class="wrapper wrapperCu">
           <footer class="text-center text-bottom bg-dark text-white">
->>>>>>> c4cb96cf1db7788a44181d1911c5e67ad0c15cc1
            Thanks for visiting!💚
           </footer>
           </div>
       </ul>
-<<<<<<< HEAD
-
-    <div id="content-wrapper" class="d-flex flex-column bg-info text-white">
-      <nav class="navbar navbar-expand navbar-light bg-info text-white topbar static-top shadow">
-        <!-- Sidebar Toggle (Topbar) -->
-        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-            <i class="fa fa-bars"></i>
-        </button>
-        <!-- Topbar Search -->
-        <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" id="search">
-          <div class="input-group container">
-            <input type="text" class="form-control bg-light searchInput border-0 small border border-white" placeholder="Search For A Patient"
-                aria-label="Search" aria-describedby="basic-addon2" id="search-bar">
-            <div class="input-group-append">
-              <button class="btn btn-primary-s" id="searchBtn"type="button">
-                <i class="fas fa-search fa-sm"></i>
-              </button>
-=======
       <div id="content-wrapper" class="d-flex flex-column bg-dark">
         <nav class="navbar navbar-expand navbar-light bg-dark-c topbar static-top shadow">
           <form class=" column hide " id="search">
@@ -123,7 +82,6 @@
               </select>
               <input class="mr-0 column searchInput " size="25"  id='search-bar'>
               <button class="btn btn-c btn-success column rounded-right text-dark" id='searchButton'>Search</button>
->>>>>>> c4cb96cf1db7788a44181d1911c5e67ad0c15cc1
             </div>
           </form>
           <!-- Topbar Navbar -->
@@ -131,20 +89,6 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item active row">
               <a class="nav-link m-lc draw meet text-white">Welcome</a>
-<<<<<<< HEAD
-                   <a class="nav-link m-lc draw meet text-green userDisplay">{{user.username}}!</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link m-lc text-white draw meet" href="/settings/{{user.id}}">Settings <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link p-font-color m-lc mr-2 text-white" href="#logout" id="logout">Logout</a>
-          </li>
-        </ul>
-      </nav>
-      {{/if}}
-        <main class="text-center bg-bg-info text-white">
-=======
               <a class="nav-link m-lc draw meet text-green userDisplay">{{user.username}}!</a>
             </li>
             <li class="nav-item active">
@@ -156,8 +100,7 @@
           </ul>
         </nav>
         {{/if}}
-        <main class="text-center bg-dark">
->>>>>>> c4cb96cf1db7788a44181d1911c5e67ad0c15cc1
+        <main class="bg-dark">
           {{{ body }}}
         </main>
     </div>
