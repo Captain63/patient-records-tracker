@@ -85,4 +85,7 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 If you have any questions, [open an issue on GitHub](https://github.com/Captain63/patient-records-tracker/issues) and a contributor will be in touch!
 
 ## Screenshots
-ADD SCREENSHOTS (if we're making changes to the CSS, then I will wait to grab these until tomorrow)
+![alt text](screenshots/screenshot1.png)
+![alt text](screenshots/screenshot2.png)
+![alt text](screenshots/screenshot3.png)
+![alt text](screenshots/screenshot4.png)
